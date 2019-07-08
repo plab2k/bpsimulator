@@ -1,0 +1,79 @@
+﻿#caption {
+    position: absolute;
+    background-color: rgba(255, 255, 255, .5);
+    font: bold 11px Tahoma, sans-serif;
+    text-align: center;
+    padding: 1px 5px;
+    display: none;
+}
+
+#bpm-figures .bpm-actived path,
+#bpm-figures .bpm-actived rect {
+    stroke-width: 2;
+}
+
+#bpm-connect a path.long {
+    stroke-opacity: .4;
+}
+
+#bpm-connect a {
+    cursor: default;
+}
+
+#bpm-connect a.deleted {
+    cursor: pointer;
+}
+
+#bpm-connect a.deleted path:first-child {
+    stroke-dasharray: 14;
+}
+
+.bpm-recived {
+    cursor: copy;
+}
+
+.bpm-recived-disabled {
+    opacity: 0.6;
+}
+
+.bpm-obj.bpm-actived>text {
+    fill: none;
+}
+
+.bpm-obj.selected {
+    fill-opacity: 0.6;
+}
+
+foreignObject:not(:empty) {
+    padding: 2px;
+    font-size: small;
+    line-height: 1em;
+    width: 19em;
+    height: 5em;
+}
+
+foreignObject span {
+    background-color: rgba(255, 255, 255, .8);
+    display: inline-block;
+    animation: blink1 2s linear forwards;
+    border-radius: 4px;
+}
+
+.bpm-obj:hover foreignObject span {
+    animation: none;
+    color: rgba(0, 0, 0, 1);
+}
+
+foreignObject span:first-child {
+    animation-delay: .5s;
+}
+
+@keyframes blink1 {
+    80% {
+        color: rgba(0, 0, 0, 1);
+    }
+    100% {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0);
+    }
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-38422fae-e03e-43a3-bef4-bd33b32041b2" targetNamespace="http://bpmn.io/bpmn" exporter="http://bpmn.io" exporterVersion="0.10.1">
+	<process id="Process_1" isExecutable="false">
+		<startEvent id="StartEvent_1" name="hunger noticed">
+			<outgoing>SequenceFlow_1</outgoing>
+		</startEvent>
+		<task id="Task_1" name="choose recipe">
+			<incoming>SequenceFlow_1</incoming>
+			<outgoing>SequenceFlow_2</outgoing>
+		</task>
+		<exclusiveGateway id="ExclusiveGateway_1" name="desired dish?" gatewayDirection="Diverging">
+			<incoming>SequenceFlow_2</incoming>
+		</exclusiveGateway>
+		<sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent_1" targetRef="Task_1" />
+		<sequenceFlow id="SequenceFlow_2" sourceRef="Task_1" targetRef="ExclusiveGateway_1" />
+	</process>
+	<bpmndi:BPMNDiagram id="BpmnDiagram_1">
+		<bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Process_1">
+			<bpmndi:BPMNShape id="StartEvent_1_gui" bpmnElement="StartEvent_1">
+				<omgdc:Bounds x="176" y="175" width="30" height="30" />
+				<bpmndi:BPMNLabel>
+					<omgdc:Bounds x="146" y="207" width="90" height="22" />
+				</bpmndi:BPMNLabel>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNShape id="Task_1_gui" bpmnElement="Task_1">
+				<omgdc:Bounds x="348" y="109" width="100" height="80" />
+				<bpmndi:BPMNLabel>
+					<omgdc:Bounds x="118.85714721679688" y="47" width="82.28570556640625" height="12" />
+				</bpmndi:BPMNLabel>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNShape id="ExclusiveGateway_1_gui" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
+				<omgdc:Bounds x="643" y="165" width="40" height="40" />
+				<bpmndi:BPMNLabel>
+					<omgdc:Bounds x="669" y="249" width="90" height="24" />
+				</bpmndi:BPMNLabel>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="SequenceFlow_1_gui" bpmnElement="SequenceFlow_1">
+				<omgdi:waypoint xsi:type="omgdc:Point" x="205" y="186" />
+				<omgdi:waypoint xsi:type="omgdc:Point" x="302" y="287" />
+				<omgdi:waypoint xsi:type="omgdc:Point" x="362" y="189" />
+				<bpmndi:BPMNLabel>
+					<omgdc:Bounds x="225" y="140" width="90" height="20" />
+				</bpmndi:BPMNLabel>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="SequenceFlow_2_di" bpmnElement="SequenceFlow_2">
+				<omgdi:waypoint xsi:type="omgdc:Point" x="448" y="149" />
+				<omgdi:waypoint xsi:type="omgdc:Point" x="527" y="149" />
+				<omgdi:waypoint xsi:type="omgdc:Point" x="527" y="185" />
+				<omgdi:waypoint xsi:type="omgdc:Point" x="643" y="185" />
+				<bpmndi:BPMNLabel>
+					<omgdc:Bounds x="433" y="192" width="90" height="20" />
+				</bpmndi:BPMNLabel>
+			</bpmndi:BPMNEdge>
+		</bpmndi:BPMNPlane>
+	</bpmndi:BPMNDiagram>
+</definitions>

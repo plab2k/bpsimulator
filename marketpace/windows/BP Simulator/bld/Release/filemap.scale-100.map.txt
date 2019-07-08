@@ -1,0 +1,7 @@
+﻿[ResourceMetadata]
+"ResourceId"			"filemap.scale-100"
+"ResourceDimensions"		"scale-100"
+
+[Files]
+"D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\filemap.scale-100.pri"			"resources.pri"
+"D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\PackageLayout\images\StoreLogo.scale-100.png"			"images\StoreLogo.scale-100.png"

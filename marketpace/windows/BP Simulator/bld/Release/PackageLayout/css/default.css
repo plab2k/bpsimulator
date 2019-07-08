@@ -1,0 +1,16 @@
+﻿body {
+    overflow: auto;
+}
+
+#controlpanel {
+    top: 10px;
+}
+
+#preloader {
+    top: 0;
+}
+
+#control a {
+    box-shadow: none;
+    border-radius:0;
+}

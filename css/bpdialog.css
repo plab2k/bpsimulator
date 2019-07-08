@@ -1,0 +1,401 @@
+﻿.modal {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    /*	background: rgba(0, 0, 0, 0.15);*/
+}
+
+.modal>* {
+    position: relative;
+    background-color: #fff;
+    padding: 24px 24px 8px 24px;
+    font-size: .8em;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+.modal footer {
+    padding: 6px 0;
+    text-align: right;
+}
+
+.modal footer button {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+    content: "";
+    display: table;
+    border-collapse: collapse;
+}
+
+.ui-helper-clearfix:after {
+    clear: both;
+}
+
+.ui-front {
+    z-index: 100;
+}
+
+.ui-helper-hidden {
+    display: none;
+}
+
+.bp-icon-check {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%3Cpath%20stroke%3D%22black%22%20fill%3D%22none%22%20stroke-width%3D%223%22%20d%3D%22M2%208%20l4%204%20l8%20-8%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.bp-icon-remove {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%3Cpath%20stroke%3D%22%236F000E%22%20stroke-width%3D%223%22%20d%3D%22M2%2014%20l12%20-12%20M2%202%20l12%2012%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.ui-icon-rename {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2026%2026%22%20%3E%0A%3Cg%3E%0A%09%3Cpolygon%20points%3D%2216.137%2C10.152%2016.137%2C10.911%2019.117%2C10.911%2019.117%2C15.09%2016.137%2C15.09%2016.137%2C15.848%2019.875%2C15.848%2019.875%2C10.152%20%0A%09%09%09%22%2F%3E%0A%09%3Cpolygon%20points%3D%2213.221%2C15.09%205.848%2C15.09%205.848%2C10.911%2013.221%2C10.911%2013.221%2C10.152%205.09%2C10.152%205.09%2C15.848%2013.221%2C15.848%20%09%22%2F%3E%0A%09%3Cpath%20d%3D%22M15.228%2C17.434c-0.031-0.032-0.053-0.068-0.071-0.115V8.835l-0.002-0.058c0.015-0.074%2C0.045-0.135%2C0.094-0.186%0A%09%09c0.145-0.151%2C0.427-0.183%2C0.638-0.183h0.395V7.421h-0.395c-0.506%2C0-0.914%2C0.122-1.215%2C0.362c-0.303-0.257-0.721-0.387-1.243-0.387%0A%09%09h-0.395v0.988h0.395c0.21%2C0%2C0.492%2C0.031%2C0.637%2C0.183c0.032%2C0.032%2C0.056%2C0.071%2C0.072%2C0.116v8.503c0%2C0.005-0.001%2C0.143-0.103%2C0.248%0A%09%09c-0.146%2C0.152-0.428%2C0.185-0.639%2C0.185h-0.395v0.986h0.395c0.518%2C0%2C0.933-0.128%2C1.235-0.379c0.303%2C0.253%2C0.717%2C0.379%2C1.234%2C0.379%0A%09%09h0.396v-0.986h-0.396C15.654%2C17.618%2C15.373%2C17.586%2C15.228%2C17.434z%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+.ui-tabs {
+    position: relative;
+    padding: .2em;
+}
+
+.ui-tabs-nav {
+    margin: 0;
+    /*	padding: .2em .2em 0;*/
+    padding: 0;
+}
+
+.ui-tabs-nav>li {
+    list-style: none;
+    float: left;
+    position: relative;
+    top: 0;
+    margin: 1px 0 0 0;
+    border-bottom-width: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+
+/*
+.ui-tabs-nav li.ui-tabs-active {
+margin-bottom: -1px;
+padding-bottom: 1px;
+}
+*/
+
+.ui-tabs-anchor {
+    float: left;
+    margin: .4em;
+    text-decoration: none;
+}
+
+.ui-tabs-panel {
+    display: block;
+    border-width: 0;
+    padding: 1em 1.4em;
+    background: none;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+fieldset ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset ol {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+fieldset ul li:before {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+
+fieldset ul li:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+	clear: both;
+}
+*/
+
+fieldset li {
+    padding: .25em 0;
+}
+
+label {
+    width: 13em;
+    clear: left;
+    float: left;
+    height: 1.6em;
+    line-height: 1.6em;
+    vertical-align: middle;
+}
+
+fieldset label+input,
+fieldset label+select,
+fieldset label+span,
+fieldset input+select,
+fieldset input+span {
+    margin-left: 1px;
+    line-height: 1em;
+    vertical-align: middle;
+}
+
+.ui-sortable li {
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%3Cg%20%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%3E%0A%3Cpolyline%20points%3D%221%2C6%208%2C1%2015%2C6%22%20%2F%3E%0A%3Cpolyline%20points%3D%221%2C10%208%2C15%2015%2C10%22%20%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E") no-repeat;
+    background-size: 14px;
+    background-position: 98% center;
+    cursor: pointer;
+}
+
+.welcomwin {
+    background: linear-gradient(to bottom, #0D47A1 5.4em, transparent 5.4em);
+    border-radius: 5px;
+}
+
+.welcomwin svg {
+    width: 1em;
+    height: 1em;
+    margin-right: .5em;
+    vertical-align: middle;
+    fill: white;
+}
+
+.welcomwin legend {
+    position: relative;
+    top: 1.7em;
+}
+
+.welcomwin fieldset:first-of-type legend {
+    top: 3.4em;
+}
+
+.welcomwin input,
+.welcomwin select {
+    margin-left: 10em;
+    padding: 3px 3px;
+    vertical-align: baseline;
+}
+
+.welcomwin label {
+    margin-left: .5em;
+    display: inline-block;
+    margin-top: -7px;
+    float: none;
+    clear: none;
+    width: auto;
+}
+
+.welcomwin header {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.welcomwin button {
+    float: right;
+}
+
+.modal .welcomwin footer {
+    text-align: left;
+}
+
+.welcomwin footer span {
+    opacity: 0;
+}
+
+.welcomwin footer span:hover {
+    opacity: 0.5;
+}
+
+.bpsHelp {
+    font-size: 90%;
+}
+
+.bpsHelp h3 {
+    margin: 0;
+}
+
+.bpsHelp span:FIRST-CHILD {
+    font-weight: bold;
+}
+
+.bpsHelp ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ui-selectable-helper {
+    position: absolute;
+    z-index: 100;
+    border: 1px dotted black;
+}
+
+
+/*
+.ui-selecting,.ui-selected,.ui-draggable-dragging {
+	opacity: 0.6;
+}
+*/
+
+.resourceList>li,
+.nextList>li,
+.prevList>li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.resourceList h5,
+.nextList h5,
+.prevList h5 {
+    margin: 0;
+    font-size: 1em;
+}
+
+input[name=tr_count] {
+    width: 4em;
+}
+
+.bptimerange .bp-icon-remove,
+.fileteredList .bp-icon-remove {
+    display: block;
+    float: right;
+    margin-left: .2em;
+    margin-top: -2px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    cursor: pointer;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+}
+
+.bptimerange button {
+    margin: 0.2em 0;
+}
+
+.bpsLog {
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+
+.bpsLog span:not(:first-child) {
+    border-bottom: 1px dotted;
+    cursor: pointer;
+}
+
+.log_selected {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bpsDashboard a.fbut {
+    position: absolute;
+    top: 510px;
+    left: 412px;
+}
+
+.helpbot2 a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(13, 71, 161, 0.87) !important;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 150%;
+    letter-spacing: 1.2px;
+    padding: 8px;
+    margin-top: 0.5em;
+}
+
+.helpbot2 a:hover {
+    background-color: rgba(153, 153, 153, 0.2);
+}
+
+.helpbot2 a:active {
+    background-color: rgba(153, 153, 153, 0.4);
+}
+
+.bpslibrary header,
+.bpsReport header {
+    border-bottom: 1px solid gray;
+    line-height: 2em;
+}
+
+.bpslibrary header a,
+.bpsReport header a {
+    text-transform: uppercase;
+    outline-style: none;
+    text-decoration: none;
+    padding: 0.4em;
+    color: gray;
+}
+
+.bpslibrary a.actived,
+.bpsReport a.actived {
+    color: #0D47A1;
+    border-bottom: 2px solid #0D47A1;
+}
+
+.bpsReport table[data-func=utilisation] td:not(:first-child) {
+    text-align: right;
+}
+
+.bpsReport table[data-func=matrix] td:not(:first-child) {
+    text-align: center;
+}
+
+.bpslibrary ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bpslibrary li {
+    padding: 8px 0px 10px 16px;
+    cursor: pointer;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%3Ctext%20font-size%3D%2216%22%20x%3D%221.5%22%20y%3D%2213.5%22%3E%2B%3C%2Ftext%3E%0A%3C%2Fsvg%3E") no-repeat left center;
+}
+
+.bpslibrary footer {
+    text-align: center;
+}
+
+.iconfilefind {
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22gray%22%20d%3D%22M9%2C13A3%2C3%200%200%2C0%2012%2C16A3%2C3%200%200%2C0%2015%2C13A3%2C3%200%200%2C0%2012%2C10A3%2C3%200%200%2C0%209%2C13M20%2C19.59V8L14%2C2H6A2%2C2%200%200%2C0%204%2C4V20A2%2C2%200%200%2C0%206%2C22H18C18.45%2C22%2018.85%2C21.85%2019.19%2C21.6L14.76%2C17.17C13.96%2C17.69%2013%2C18%2012%2C18A5%2C5%200%200%2C1%207%2C13A5%2C5%200%200%2C1%2012%2C8A5%2C5%200%200%2C1%2017%2C13C17%2C14%2016.69%2C14.96%2016.17%2C15.75L20%2C19.59Z%22%20%2F%3E%0A%3C%2Fsvg%3E") center left no-repeat;
+}
+
+.iconpackageup {
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22gray%22%20d%3D%22M20.54%2C5.23C20.83%2C5.57%2021%2C6%2021%2C6.5V19A2%2C2%200%200%2C1%2019%2C21H5A2%2C2%200%200%2C1%203%2C19V6.5C3%2C6%203.17%2C5.57%203.46%2C5.23L4.84%2C3.55C5.12%2C3.21%205.53%2C3%206%2C3H18C18.47%2C3%2018.88%2C3.21%2019.15%2C3.55L20.54%2C5.23M5.12%2C5H18.87L17.93%2C4H5.93L5.12%2C5M12%2C9.5L6.5%2C15H10V17H14V15H17.5L12%2C9.5Z%22%20%2F%3E%0A%3C%2Fsvg%3E") center left no-repeat;
+}
+
+.iconpackagedown {
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cpath%20fill%3D%22gray%22%20d%3D%22M5.12%2C5L5.93%2C4H17.93L18.87%2C5M12%2C17.5L6.5%2C12H10V10H14V12H17.5L12%2C17.5M20.54%2C5.23L19.15%2C3.55C18.88%2C3.21%2018.47%2C3%2018%2C3H6C5.53%2C3%205.12%2C3.21%204.84%2C3.55L3.46%2C5.23C3.17%2C5.57%203%2C6%203%2C6.5V19A2%2C2%200%200%2C0%205%2C21H19A2%2C2%200%200%2C0%2021%2C19V6.5C21%2C6%2020.83%2C5.57%2020.54%2C5.23Z%22%20%2F%3E%0A%3C%2Fsvg%3E") center left no-repeat;
+}
+
+.share svg {
+    width: 40px;
+    height: 40px;
+    fill: #0D47A1;
+    opacity: .9;
+}
+
+.share svg:hover {
+    opacity: 1;
+}

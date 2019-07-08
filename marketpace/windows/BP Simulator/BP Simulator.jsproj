@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>77987233-cce2-4a9c-833f-e21d28300546</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0'">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <PackageCertificateKeyFile>BP Simulator_StoreKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="..\..\..\css\bpctrlpanel.css">
+      <Link>css\bpctrlpanel.css</Link>
+    </Content>
+    <Content Include="..\..\..\css\bpdialog.css">
+      <Link>css\bpdialog.css</Link>
+    </Content>
+    <Content Include="..\..\..\css\bpmodeler.css">
+      <Link>css\bpmodeler.css</Link>
+    </Content>
+    <Content Include="..\..\..\css\common.css">
+      <Link>css\common.css</Link>
+    </Content>
+    <Content Include="..\..\..\css\header.css">
+      <Link>css\header.css</Link>
+    </Content>
+    <Content Include="..\..\..\css\vendor\normalize.css">
+      <Link>css\vendor\normalize.css</Link>
+    </Content>
+    <Content Include="..\..\..\demos\1.json">
+      <Link>demos\1.json</Link>
+    </Content>
+    <Content Include="..\..\..\js\api\api.js">
+      <Link>js\api\api.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\app\core.js">
+      <Link>js\app\core.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\app\options.js">
+      <Link>js\app\options.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\app\states.js">
+      <Link>js\app\states.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\common\common.js">
+      <Link>js\common\common.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\common\dbltap.js">
+      <Link>js\common\dbltap.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\common\helper.js">
+      <Link>js\common\helper.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\lang\es.js">
+      <Link>js\lang\es.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\lang\ru.js">
+      <Link>js\lang\ru.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\area.js">
+      <Link>js\modules\area.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\autosave.js">
+      <Link>js\modules\autosave.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\calc.js">
+      <Link>js\modules\calc.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\dblclick.js">
+      <Link>js\modules\dblclick.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\errors.js">
+      <Link>js\modules\errors.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\simulation\collector.js">
+      <Link>js\modules\simulation\collector.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\simulation\control.js">
+      <Link>js\modules\simulation\control.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\simulation\execute.js">
+      <Link>js\modules\simulation\execute.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\simulation\init.js">
+      <Link>js\modules\simulation\init.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\simulation\log.js">
+      <Link>js\modules\simulation\log.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\snackbar.js">
+      <Link>js\modules\snackbar.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\modules\storage\library.js">
+      <Link>js\modules\storage\library.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\vendor\globalize.culture.es.js">
+      <Link>js\vendor\globalize.culture.es.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\vendor\globalize.culture.ru.js">
+      <Link>js\vendor\globalize.culture.ru.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\vendor\globalize.js">
+      <Link>js\vendor\globalize.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\vendor\jquery-2.1.4.js">
+      <Link>js\vendor\jquery-2.1.4.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\vendor\jquery-ui-1.11.4.js">
+      <Link>js\vendor\jquery-ui-1.11.4.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\vendor\saveSvgAsPng.js">
+      <Link>js\vendor\saveSvgAsPng.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\widget\ctrlpanel.js">
+      <Link>js\widget\ctrlpanel.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\widget\dashboard.js">
+      <Link>js\widget\dashboard.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\widget\dialogs.js">
+      <Link>js\widget\dialogs.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\widget\floatbtn.js">
+      <Link>js\widget\floatbtn.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\widget\modeler.js">
+      <Link>js\widget\modeler.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\widget\objdetail.js">
+      <Link>js\widget\objdetail.js</Link>
+    </Content>
+    <Content Include="..\..\..\js\widget\timeranges.js">
+      <Link>js\widget\timeranges.js</Link>
+    </Content>
+    <None Include="BP Simulator_StoreKey.pfx" />
+    <Content Include="css\default.css" />
+    <Content Include="default.html" />
+    <Content Include="images\Icon.256.png" />
+    <Content Include="images\LockScreenLogo.scale-200.png" />
+    <Content Include="images\SplashScreen.scale-200.png" />
+    <Content Include="images\Square150x150Logo.scale-200.png" />
+    <Content Include="images\Square44x44Logo.scale-200.png" />
+    <Content Include="images\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="images\StoreLogo.scale-100.png" />
+    <Content Include="images\Wide310x150Logo.scale-200.png" />
+    <Content Include="js-buildinfo\debug.js" />
+    <Content Include="js-buildinfo\release.js" />
+    <Content Include="js\buildinfo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\common\win_solver.js" />
+    <Content Include="js\modules\storage\win_local.js" />
+    <Content Include="js\win_controller.js" />
+    <Content Include="js\default.js" />
+    <Content Include="js\modules\win_events.js" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="WinJS\css\ui-dark.css" />
+    <Content Include="WinJS\css\ui-light.css" />
+    <Content Include="WinJS\fonts\Symbols.ttf" />
+    <Content Include="WinJS\js\en-US\ui.strings.js" />
+    <Content Include="WinJS\js\base.js" />
+    <Content Include="WinJS\js\ui.js" />
+    <None Include="BP Simulator_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\vendor\" />
+    <Folder Include="demos\" />
+    <Folder Include="js\api\" />
+    <Folder Include="js\app\" />
+    <Folder Include="js\lang\" />
+    <Folder Include="js\modules\simulation\" />
+    <Folder Include="js\vendor\" />
+    <Folder Include="js\widget\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="resources\en-US\resources.resjson" />
+    <PRIResource Include="resources\ru-RU\resources.resjson" />
+    <PRIResource Include="resources\es-ES\resources.resjson" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <ItemGroup>
+    <BuildFlagSource Include="js-buildinfo\$(Configuration).js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BuildFlagDestination Include="js\buildinfo.js" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <Copy SourceFiles="@(BuildFlagSource)" DestinationFiles="@(BuildFlagDestination)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>59A2D19119934E8710BC4759D510B48020AF12D2</PackageCertificateThumbprint>
+  </PropertyGroup>
+</Project>

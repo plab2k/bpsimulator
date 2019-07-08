@@ -1,0 +1,16 @@
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Release\AppxManifest.xml
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Release\BP Simulator.build.appxrecipe
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\ResourceHandlingTask.state
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\priconfig.xml
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\priconfig.xml.intermediate
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\layout.resfiles
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\layout.resfiles.intermediate
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\resources.resfiles
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\resources.resfiles.intermediate
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\pri.resfiles
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\pri.resfiles.intermediate
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\qualifiers.txt
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\qualifiers.txt.intermediate
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\MultipleQualifiersPerDimensionFound.txt
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Release\ProjectArchitectures.txt
+D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Release\ReverseMap\resources.pri

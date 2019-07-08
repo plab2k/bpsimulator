@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE project>
+<project name="bpsim.web" default="0.build" basedir="./../../">
+	<property file="dev/ant/app.properties" />
+	<property name="lib.dir" value="/home/prolis/projects/common/lib" />
+	<property name="build.dir" value="dev/tmp/build" />
+	<property name="pub.dir" value="pub" />
+	<property name="compress" value="true" />
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${lib.dir}/ant-contrib-1.0b3.jar" />
+		</classpath>
+	</taskdef>
+	<target name="0.build" depends="init,concat-js,concat-css,minify,makeIndex,makeAppCache,loadFolder,clear" description="buids" />
+	<target name="loadFolder">		
+		<delete includeEmptyDirs="true">
+					<fileset dir="${pub.dir}" includes="**/*" defaultexcludes="false" />
+		</delete>
+		<mkdir dir="${pub.dir}" />
+		<copy file="${build.dir}/index.html" todir="${pub.dir}" />
+		<copy file="${build.dir}/msauth.html" todir="${pub.dir}" />
+		<copy file="${build.dir}/manifest.json" todir="${pub.dir}" />
+		<copy file="${build.dir}/${file.name}.js" todir="${pub.dir}" />
+		<copy file="${build.dir}/${file.name}.map" todir="${pub.dir}" failonerror="false" />
+		<!--<copy file="${build.dir}/${file.name}.css" todir="${pub.dir}" /> -->
+		<copy file="${build.dir}/cache.manifest" todir="${pub.dir}" />
+		<copy file="dev/marketpace/mozilla/bpsimulator.webapp" todir="${pub.dir}" />
+		<copy todir="${pub.dir}/demos">
+			<fileset dir="dev/demos" />
+		</copy>
+		<!-- <copy todir="${pub.dir}/img/icons"> <fileset dir="dev/img/iconset" /> </copy> <copy todir="${pub.dir}/img/launch"> <fileset dir="dev/img/launch" /> </copy> -->
+	</target>
+	<target name="init">
+		<buildnumber file="dev/ant/app.number" />
+		<property name="file.name" value="bpsim-${build.major.number}.${build.minor.number}.${build.number}" />
+		<echo>${file.name}</echo>
+		<mkdir dir="${build.dir}" />
+		<loadfile property="analytics" srcFile="dev/ant/analytics.app.html" />
+		<loadfile property="metrika" srcFile="dev/ant/metrika.app.html" />
+		<loadfile property="mixpanel" srcFile="dev/ant/mixpanel.app.html" />
+	</target>
+	<target name="makeIndex">
+		<copy file="dev/index.html" todir="${build.dir}" overwrite="true" />
+		<copy file="dev/msauth.html" todir="${build.dir}" overwrite="true" />
+		<copy file="dev/manifest.json" todir="${build.dir}" overwrite="true" />
+		<replace file="${build.dir}/index.html" token="&lt;html" value="&lt;html manifest=&quot;cache.manifest&quot;" encoding="utf-8" />
+		<replaceregexp file="${build.dir}/index.html" match="${line.separator}&lt;link.*css/.*>" replace="" flags="g" encoding="utf-8" />
+		<replaceregexp file="${build.dir}/index.html" match="${line.separator}.&lt;script.*script>" replace="" flags="g" encoding="utf-8" />
+		<!--<replaceregexp file="${build.dir}/index.html" match="&lt;/head>" replace="&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;${file.name}.css&quot;&gt;${line.separator}&lt;/head>" encoding="utf-8" /> -->
+		<replaceregexp file="${build.dir}/index.html" match="&lt;/body>" replace="&lt;script src=&quot;//code.jquery.com/jquery-${jquery.version}.min.js&quot;&gt;&lt;/script&gt;
+							${line.separator}&lt;script src=&quot;//code.jquery.com/ui/${jquery.ui.version}/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+							${line.separator}&lt;script src=&quot;${file.name}.js&quot;&gt;&lt;/script&gt;${line.separator}&lt;/body>" encoding="utf-8" />
+		<replaceregexp file="${build.dir}/index.html" match="&lt;/body" replace="${analytics}${line.separator}&lt;/body" encoding="utf-8" />
+		<replaceregexp file="${build.dir}/index.html" match="#version#" replace="${build.major.number}.${build.minor.number}.${build.number}" encoding="utf-8" flags="g" />
+		<!--<loadfile property="headcss" srcfile="dev/css/header.css" encoding="utf-8" /> -->
+		<loadfile property="headcss" srcfile="${build.dir}/${file.name}.css" encoding="utf-8" />
+		<replaceregexp file="${build.dir}/index.html" match="&lt;/head>" replace="&lt;style type=&quot;text/css&quot;>${line.separator}${headcss}&lt;/style>${line.separator}&lt;/head>" encoding="utf-8" />
+	</target>
+	<target name="makeAppCache">
+		<echo file="${build.dir}/cache.manifest" append="false">CACHE MANIFEST
+#rev ${build.major.number}${build.minor.number}${build.number}
+NETWORK:
+*
+CACHE: 
+${file.name}.js
+demos/1.json
+//code.jquery.com/jquery-${jquery.version}.min.js
+//code.jquery.com/ui/${jquery.ui.version}/jquery-ui.min.js</echo>
+		<replaceregexp file="${build.dir}/cache.manifest" match="\t" flags="g" replace="" encoding="utf-8" />
+		<replaceregexp file="${build.dir}/cache.manifest" match="\n$" flags="g" replace="" encoding="utf-8" />
+	</target>
+	<target name="clear">
+		<delete dir="${build.dir}" />
+	</target>
+	<target name="concat-js">
+		<concat destfile="${build.dir}/concat.js" encoding="utf-8">
+			<filelist dir="dev/js">
+				<file name="vendor/globalize.js" />
+				<file name="vendor/globalize.culture.ru.js" />
+				<file name="vendor/globalize.culture.es.js" />
+				<file name="vendor/saveSvgAsPng.js" />
+				<file name="vendor/zip.js" />
+				<file name="vendor/inflate.js" />
+				<file name="lang/ru.js" />
+				<file name="lang/es.js" />
+				<file name="lang/fr.js" />
+				<file name="vendor/jquery.ui.touch-punch.js" />
+				<file name="widget/ctrlpanel.js" />
+				<file name="widget/modeler.js" />
+				<file name="widget/dialogs.js" />
+				<file name="widget/objdetail.js" />
+				<file name="widget/timeranges.js" />
+				<file name="widget/dashboard.js" />
+				<file name="widget/floatbtn.js" />
+				<file name="common/dbltap.js" />
+				<file name="common/helper.js" />
+				<file name="common/common.js" />				
+				<file name="app/core.js" />
+				<file name="app/states.js" />
+				<file name="app/options.js" />
+				<file name="modules/storage/local.js" />
+				<file name="modules/storage/drive.js" />
+				<file name="modules/storage/onedrive.js" />
+				<file name="modules/storage/library.js" />
+				<file name="api/api.js" />
+				<file name="controller.js" />
+				<file name="modules/area.js" />
+				<file name="modules/autosave.js" />				
+				<file name="modules/events.js" />
+				<file name="modules/appcashe.js" />
+				<file name="modules/errors.js" />
+				<file name="modules/snackbar.js" />
+				<file name="modules/simulation/control.js" />
+				<file name="modules/simulation/init.js" />
+				<file name="modules/simulation/execute.js" />
+				<file name="modules/simulation/log.js" />
+				<file name="modules/simulation/collector.js" />
+				<file name="modules/import/bpmn.js" />
+				<file name="modules/import/visio.js" />
+				<file name="modules/loader.js" />
+				<!--
+				<file name="modules/post/post.js" />
+				<file name="modules/post/fb.js" />
+				<file name="modules/post/vk.js" />
+				<file name="modules/post/twitter.js" />
+				<file name="modules/post/pt.js" />
+				-->
+			</filelist>
+		</concat>
+		<length file="${build.dir}/concat.js" />
+	</target>
+	<target name="concat-css">
+		<concat destfile="${build.dir}/concat.css" encoding="utf-8">
+			<filelist dir="dev/css">
+				<file name="vendor/normalize.css" />
+				<file name="common.css" />
+				<file name="header.css" />
+				<file name="bpmodeler.css" />
+				<file name="bpctrlpanel.css" />
+				<file name="bpdialog.css" />
+			</filelist>
+		</concat>
+		<length file="${build.dir}/concat.css" />
+	</target>
+	<target name="minify">
+		<echo>Compress status: ${compress}</echo>
+		<if>
+			<equals arg1="${compress}" arg2="true" />
+			<then>
+				<exec executable="uglifyjs" dir="${build.dir}">
+					<arg value="-o" />
+					<arg value="${file.name}.js" />
+					<arg value="--unsafe" />
+					<arg value="--screw-ie8" />
+					<arg value="--source-map" />
+					<arg value="${file.name}.map" />
+					<arg value="concat.js" />
+				</exec>
+			</then>
+			<else>
+				<copy file="${build.dir}/concat.js" tofile="${build.dir}/${file.name}.js" />
+			</else>
+		</if>
+		<length file="${build.dir}/${file.name}.js" />
+		<exec executable="uglifycss" dir="${build.dir}" output="${build.dir}/${file.name}.css">
+			<arg value="concat.css" />
+		</exec>
+		<length file="${build.dir}/${file.name}.css" />
+	</target>
+	<target name="1.ftp-pub" description="pub to www">
+		<ftp action="del" server="${ftp.server}" userid="${ftp.userid}" password="${ftp.password}" remotedir="${ftp.path}">
+			<fileset dir="*" />
+		</ftp>
+		<ftp server="${ftp.server}" userid="${ftp.userid}" password="${ftp.password}" remotedir="${ftp.path}" binary="no" chmod="644">
+			<fileset dir="${pub.dir}" excludes="*.map img/ *.ico" />
+		</ftp>
+		<ftp server="${ftp.server}" userid="${ftp.userid}" password="${ftp.password}" remotedir="${ftp.path}" binary="yes" chmod="644" preservelastmodified="true" timediffauto="true">
+			<fileset dir="${pub.dir}">
+				<include name="img/" />
+			</fileset>
+		</ftp>
+	</target>
+	<target name="test" description="delete pub">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${pub.dir}" includes="**/*" defaultexcludes="false" />
+		</delete>
+	</target>
+</project>

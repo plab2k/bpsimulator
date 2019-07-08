@@ -1,0 +1,4 @@
+MainPackage=D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Release\BP Simulator_1.1.2.0_AnyCPU.appx
+ResourcePack=D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Release\BP Simulator_1.1.2.0_language-es.appx
+ResourcePack=D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Release\BP Simulator_1.1.2.0_language-ru.appx
+ResourcePack=D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Release\BP Simulator_1.1.2.0_scale-100.appx

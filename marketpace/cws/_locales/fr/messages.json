@@ -1,0 +1,11 @@
+{
+  "appName": {
+    "message": "Processus d'entreprise Simulateur"
+  },
+    "appShortName": {
+    "message": "BP Simulateur"
+  },
+  "appDesc": {
+    "message": "Processus d'affaires service de modélisation de simulation"
+  }
+}

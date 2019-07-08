@@ -1,0 +1,11 @@
+{
+  "appName": {
+    "message": "Business Process Simulator"
+  },
+  "appShortName": {
+    "message": "BP Simulator"
+  },
+  "appDesc": {
+    "message": "Business process simulation modeling service" 
+  }
+}

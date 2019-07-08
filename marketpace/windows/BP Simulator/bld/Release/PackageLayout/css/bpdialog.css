@@ -1,0 +1,491 @@
+﻿.modal {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+.modal>* {
+	position: relative;
+	background-color: #fff;
+	padding: 24px 24px 8px 24px;
+	font-size: .8em;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+.modal footer {
+	padding: 6px 0;
+	text-align: right;
+}
+
+.modal footer button {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.ui-helper-clearfix:before,.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+
+.ui-helper-clearfix:after {
+	clear: both;
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+.ui-helper-hidden {
+	display: none;
+}
+
+.bp-icon-check {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%3Cpath%20stroke%3D%22black%22%20fill%3D%22none%22%20stroke-width%3D%223%22%20d%3D%22M2%208%20l4%204%20l8%20-8%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.bp-icon-remove {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%3Cpath%20stroke%3D%22%236F000E%22%20stroke-width%3D%223%22%20d%3D%22M2%2014%20l12%20-12%20M2%202%20l12%2012%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.ui-icon-rename {
+	background-image:
+		url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2026%2026%22%20%3E%0A%3Cg%3E%0A%09%3Cpolygon%20points%3D%2216.137%2C10.152%2016.137%2C10.911%2019.117%2C10.911%2019.117%2C15.09%2016.137%2C15.09%2016.137%2C15.848%2019.875%2C15.848%2019.875%2C10.152%20%0A%09%09%09%22%2F%3E%0A%09%3Cpolygon%20points%3D%2213.221%2C15.09%205.848%2C15.09%205.848%2C10.911%2013.221%2C10.911%2013.221%2C10.152%205.09%2C10.152%205.09%2C15.848%2013.221%2C15.848%20%09%22%2F%3E%0A%09%3Cpath%20d%3D%22M15.228%2C17.434c-0.031-0.032-0.053-0.068-0.071-0.115V8.835l-0.002-0.058c0.015-0.074%2C0.045-0.135%2C0.094-0.186%0A%09%09c0.145-0.151%2C0.427-0.183%2C0.638-0.183h0.395V7.421h-0.395c-0.506%2C0-0.914%2C0.122-1.215%2C0.362c-0.303-0.257-0.721-0.387-1.243-0.387%0A%09%09h-0.395v0.988h0.395c0.21%2C0%2C0.492%2C0.031%2C0.637%2C0.183c0.032%2C0.032%2C0.056%2C0.071%2C0.072%2C0.116v8.503c0%2C0.005-0.001%2C0.143-0.103%2C0.248%0A%09%09c-0.146%2C0.152-0.428%2C0.185-0.639%2C0.185h-0.395v0.986h0.395c0.518%2C0%2C0.933-0.128%2C1.235-0.379c0.303%2C0.253%2C0.717%2C0.379%2C1.234%2C0.379%0A%09%09h0.396v-0.986h-0.396C15.654%2C17.618%2C15.373%2C17.586%2C15.228%2C17.434z%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+.ui-tabs {
+	position: relative;
+	padding: .2em;
+}
+
+.ui-tabs-nav {
+	margin: 0;
+	/*	padding: .2em .2em 0;*/
+	padding: 0;
+}
+
+.ui-tabs-nav>li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	margin: 1px 0 0 0;
+	border-bottom-width: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+/*
+.ui-tabs-nav li.ui-tabs-active {
+margin-bottom: -1px;
+padding-bottom: 1px;
+}
+*/
+.ui-tabs-anchor {
+	float: left;
+	margin: .4em;
+	text-decoration: none;
+}
+
+.ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 1.4em;
+	background: none;
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+fieldset ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+fieldset ol {
+	margin: 0;
+	padding: 0;
+}
+/*
+fieldset ul li:before {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+
+fieldset ul li:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+	clear: both;
+}
+*/
+fieldset li {
+	padding: .25em 0;
+}
+
+label {
+	width: 13em;
+	clear: left;
+	float: left;
+	height: 1.6em;
+	line-height: 1.6em;
+	vertical-align: middle;
+}
+
+fieldset label+input,fieldset label+select,fieldset label+span,fieldset input+select,fieldset input+span {
+	margin-left: 1px;
+	line-height: 1em;
+	vertical-align: middle;
+}
+
+.ui-sortable li {
+	background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%3Cg%20%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%3E%0A%3Cpolyline%20points%3D%221%2C6%208%2C1%2015%2C6%22%20%2F%3E%0A%3Cpolyline%20points%3D%221%2C10%208%2C15%2015%2C10%22%20%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E") no-repeat;
+	background-size: 14px;
+	background-position: 98% center;
+	cursor: pointer;
+}
+
+.css-treeview,.css-treeview ul,.css-treeview li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+/*
+.css-treeview li {
+	overflow: hidden;
+}
+*/
+.css-treeview {
+	min-height: 100%;
+}
+
+.css-treeview input {
+	position: absolute;
+	opacity: 0;
+}
+/*
+.css-treeview {
+	user-select: none;
+}
+*/
+.css-treeview a {
+	margin-left: 19px;
+}
+
+.css-treeview input+label+ul {
+	margin: 0 0 0 30px;
+}
+
+.css-treeview input ~ ul {
+	display: none;
+}
+
+.css-treeview input:checked ~ ul {
+	display: block;
+}
+
+.css-treeview label,.css-treeview label::before {
+	cursor: pointer;
+}
+
+.css-treeview label,.css-treeview label::before {
+	background:
+		url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2224%22%20height%3D%2272%22%20viewBox%3D%220%200%2024%2072%22%3E%0A%3Cg%20transform%3D%22translate(0%200)%22%3E%0A%09%3Cpath%20d%3D%22M10%204h-6c-1.105%200-1.99%200.895-1.99%202l-0.010%2012c0%201.105%200.895%202%202%202h16c1.105%200%202-0.895%202-2v-10c0-1.105-0.895-2-2-2h-8l-2-2z%22%20fill%3D%22%230D47A1%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%3Cg%20transform%3D%22translate(5.5%2029.5)%22%3E%0A%3Cpath%20d%3D%22M0%200%20h12%20v12%20h-12%20Z%20M2%206%20h8%22%20stroke%3D%22%23000000%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%3Cg%20transform%3D%22translate(5.5%2053.5)%22%3E%0A%3Cpath%20d%3D%22M0%200%20h12%20v12%20h-12%20Z%20M6%202%20v8%20M2%206%20h8%22%20stroke%3D%22%23000000%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+		no-repeat;
+}
+
+.css-treeview label,.css-treeview a,.css-treeview label::before {
+	display: inline-block;
+	height: 24px;
+	line-height: 24px;
+	vertical-align: middle;
+}
+
+.css-treeview label {
+	background-position: 22px 0;
+	min-width: 20em;
+	width: auto;
+	float: none;
+	clear: none;
+	width: auto;
+}
+
+.css-treeview label::before {
+	content: "";
+	width: 24px;
+	margin: -2px 24px 0 0;
+	vertical-align: middle;
+	background-position: 0 -48px;
+}
+
+.css-treeview input:checked+label::before {
+	background-position: 0 -24px;
+}
+
+.css-treeview input+label.empty::before {
+	background-position: 0 -100px;
+}
+
+.css-treeview span.ui-icon-rename,.css-treeview span.bp-icon-remove,.css-treeview span.ui-icon-share {
+	display: block;
+	float: right;
+	margin-left: .2em;
+	width: 24px;
+	height: 24px;
+	text-align: center;
+	cursor: pointer;
+	background-size: 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 12px;
+}
+
+.css-treeview span.bp-icon-remove {
+	background-size: 14px;
+}
+
+.css-treeview span.ui-icon-share {
+	background-size: 18px;
+}
+
+.css-treeview label.ui-state-default {
+	font-weight: bold;
+}
+
+.welcomwin legend {
+	position: relative;
+	top: 1.7em;
+}
+
+.welcomwin fieldset:first-of-type legend {
+	top: 3.4em;
+}
+
+.welcomwin input,.welcomwin select {
+	margin-left: 10em;
+	padding: 3px 3px;
+	vertical-align: baseline;
+}
+
+.welcomwin label {
+	margin-left: .5em;
+	display: inline-block;
+	margin-top: -7px;
+	float: none;
+	clear: none;
+	width: auto;
+}
+
+.welcomwin header {
+	font-weight: bold;
+}
+
+.bpsInfo {
+	text-align: center;
+}
+
+.bpsInfo h2 {
+	font-size: 2em;
+	margin: 1em;
+	color: #0D47A1;
+	font-weight: normal;
+}
+
+.bpsInfo ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.bpsInfo .unregistered li {
+	display: inline;
+}
+
+.bpsInfo svg {
+	width: 10em;
+	height: 10em;
+}
+
+.bpsInfo .copyr {
+	color: #424242;
+}
+
+.bpsInfo a {
+	text-decoration: none;
+}
+
+.bpsInfo a:hover {
+	text-decoration: underline;
+	color: #0D47A1;
+}
+
+.bpsHelp {
+	font-size: 90%;
+}
+
+.bpsHelp h3 {
+	margin: 0;
+}
+
+.bpsHelp span:FIRST-CHILD {
+	font-weight: bold;
+}
+
+.bpsHelp ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-selectable-helper {
+	position: absolute;
+	z-index: 100;
+	border: 1px dotted black;
+}
+/*
+.ui-selecting,.ui-selected,.ui-draggable-dragging {
+	opacity: 0.6;
+}
+*/
+.resourceList>li,.nextList>li,.prevList>li {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.resourceList h5,.nextList h5,.prevList h5 {
+	margin: 0;
+	font-size: 1em;
+}
+
+input[name=tr_count] {
+	width: 5em;
+}
+
+.bptimerange .bp-icon-remove,.fileteredList .bp-icon-remove {
+	display: block;
+	float: right;
+	margin-left: .2em;
+	width: 24px;
+	height: 24px;
+	text-align: center;
+	cursor: pointer;
+	background-size: 14px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 12px;
+}
+
+.bptimerange button {
+	margin: 0.2em 0;
+}
+
+.bpsLog ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow-y: scroll;
+	max-height: 500px;
+}
+
+.bpsLog
+ 
+span
+:not
+ 
+(
+:first-child
+ 
+){
+border-bottom
+:
+ 
+1
+px
+ 
+dotted
+;
+
+	
+cursor
+:
+ 
+pointer
+;
+
+
+}
+.log_selected {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bpsDashboard a.fbut {
+	position: absolute;
+	top: 510px;
+	left: 412px;
+}
+
+.helpbot2 a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: rgba(13, 71, 161, 0.87) !important;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 150%;
+	letter-spacing: 1.2px;
+	padding: 8px;
+	margin-top: 0.5em;
+}
+
+.helpbot2 a:hover {
+	background-color: rgba(153, 153, 153, 0.2);
+}
+
+.helpbot2 a:active {
+	background-color: rgba(153, 153, 153, 0.4);
+}
+
+#general button {
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.bpslibrary header {
+	border-bottom: 1px solid gray;
+	line-height: 2em;
+}
+
+.bpslibrary a {
+	text-transform: uppercase;
+	outline-style: none;
+	text-decoration: none;
+	padding: 0.4em;
+	color: gray;
+}
+
+.bpslibrary a.actived {
+	color: #0D47A1;
+	border-bottom: 2px solid #0D47A1;
+}
+
+.bpslibrary ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.bpslibrary li {
+	padding: 8px 0px 10px 0;
+	cursor: pointer;
+}
+
+.bpsReport td:not(:first-child ){
+	text-align: right;
+}

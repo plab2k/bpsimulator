@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "version": "2.0.1",
+  "name": "Business Process Simulator",
+  "short_name": "BP Simulator",
+  "description": "Online workflow simulations modeling tool",
+  "offline_enabled": true,
+  "author": "prolis lab2k",
+  "icons": {
+    "128": "icons/128.png",
+    "16": "icons/16.png"
+  },
+  "container": ["DOMAIN_INSTALLABLE","GOOGLE_DRIVE"],
+  "api_console_project_id": "1086928993551",
+  "app" : {
+    "launch" : {
+      "web_url" : "https://www.bpsimulator.com/run/"
+    }
+  }
+}

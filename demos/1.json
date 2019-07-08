@@ -1,0 +1,912 @@
+ {
+     "info": {
+         "id": "1e76f817-0477-4feb-94b9-493d443e",
+         "name": "Retail lending",
+         "description": null,
+         "created": "Tue, 24 Mar 2015 11:51:21 GMT",
+         "lastSaved": "Tue, 24 Mar 2015 11:53:54 GMT",
+         "revision": 4,
+         "coreVersion": "1.0.4"
+     },
+     "objects": {
+         "c69f2ec0-5d07-4c09-b856-b27dd3ae": {
+             "id": "c69f2ec0-5d07-4c09-b856-b27dd3ae",
+             "name": "Visit the customer to make an application",
+             "position": {
+                 "top": 20,
+                 "left": 560
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "82493adc-f669-4d0e-a100-ca34b6ed",
+                     "transferTimeMin": 0,
+                     "transferTimeMax": 0,
+                     "transferMult": 60,
+                     "allocationPercent": 100
+                 }],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 3,
+                 "lastRunTime": "2015-03-24T06:06:00.000Z",
+                 "fbtested": true
+             },
+             "objClass": "bpGenerator",
+             "timeRanges": [{
+                 "fromSec": 32400,
+                 "toSec": 46800,
+                 "count": 120,
+                 "distrType": 1
+             }, {
+                 "fromSec": 50400,
+                 "toSec": 64800,
+                 "count": 120,
+                 "distrType": 1
+             }],
+             "allocation": 0,
+             "globalPriority": 0
+         },
+         "82493adc-f669-4d0e-a100-ca34b6ed": {
+             "id": "82493adc-f669-4d0e-a100-ca34b6ed",
+             "name": "Making loan application",
+             "position": {
+                 "top": 120,
+                 "left": 560
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "c69f2ec0-5d07-4c09-b856-b27dd3ae"
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "b359edcf-a995-4853-a872-3a20bb77",
+                     "transferTimeMin": 1,
+                     "transferTimeMax": 1,
+                     "transferMult": 60,
+                     "allocationPercent": 100
+                 }],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "stockQueue": [],
+                 "workQueue": [{
+                     "id": 1,
+                     "begin": "2015-03-24T06:00:00.000Z",
+                     "last": "2015-03-24T06:13:21.000Z",
+                     "source": "c69f2ec0-5d07-4c09-b856-b27dd3ae",
+                     "globalPriority": 0,
+                     "localPriority": 0,
+                     "waitInQueue": 0,
+                     "waitInAssign": 0,
+                     "work": 801,
+                     "transfer": 0,
+                     "cost": 133.5
+                 }, {
+                     "id": 2,
+                     "begin": "2015-03-24T06:02:00.000Z",
+                     "last": "2015-03-24T06:16:29.000Z",
+                     "source": "c69f2ec0-5d07-4c09-b856-b27dd3ae",
+                     "globalPriority": 0,
+                     "localPriority": 0,
+                     "waitInQueue": 0,
+                     "waitInAssign": 0,
+                     "work": 869,
+                     "transfer": 0,
+                     "cost": 144.83333333333334
+                 }, {
+                     "id": 3,
+                     "begin": "2015-03-24T06:04:00.000Z",
+                     "last": "2015-03-24T06:18:55.000Z",
+                     "source": "c69f2ec0-5d07-4c09-b856-b27dd3ae",
+                     "globalPriority": 0,
+                     "localPriority": 0,
+                     "waitInQueue": 0,
+                     "waitInAssign": 0,
+                     "work": 895,
+                     "transfer": 0,
+                     "cost": 149.16666666666666
+                 }],
+                 "tranferQueue": [],
+                 "ANDwaitQueue": {},
+                 "fbtested": true
+             },
+             "objClass": "bpFunction",
+             "input": {
+                 "objects": []
+             },
+             "output": {
+                 "objects": []
+             },
+             "regulate": {
+                 "objects": []
+             },
+             "execute": {
+                 "objects": [{
+                     "obj": "a70f20cc-77ac-4c3c-b600-0c6d7c14",
+                     "costPerTask": false,
+                     "costValue": 0,
+                     "priority": 0
+                 }],
+                 "execResource": 0
+             },
+             "support": {
+                 "objects": []
+             },
+             "runTimeMin": 10,
+             "runTimeMax": 15,
+             "runTimeMult": 60
+         },
+         "a70f20cc-77ac-4c3c-b600-0c6d7c14": {
+             "id": "a70f20cc-77ac-4c3c-b600-0c6d7c14",
+             "name": "Account Manager",
+             "position": {
+                 "top": 120,
+                 "left": 780
+             },
+             "objType": "bpSubject",
+             "objClass": "bpExecute",
+             "count": 12,
+             "costValue": 600,
+             "costPeriod": 3600,
+             "timeRanges": [{
+                 "fromSec": 32400,
+                 "toSec": 46800
+             }, {
+                 "fromSec": 50400,
+                 "toSec": 64800
+             }],
+             "_simulation": {
+                 "resources": ["2015-03-24T06:18:55.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:13:21.000Z", "2015-03-24T06:16:29.000Z"]
+             }
+         },
+         "b359edcf-a995-4853-a872-3a20bb77": {
+             "id": "b359edcf-a995-4853-a872-3a20bb77",
+             "name": "Loan scoring",
+             "position": {
+                 "top": 240,
+                 "left": 560
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "82493adc-f669-4d0e-a100-ca34b6ed"
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "242b4210-f93b-4d64-a09c-b68ddd32",
+                     "transferTimeMin": 1,
+                     "transferTimeMax": 1,
+                     "transferMult": 60,
+                     "allocationPercent": 20
+                 }, {
+                     "obj": "d2131c8a-5d27-4914-8057-ad4c65c3",
+                     "transferTimeMin": 1,
+                     "transferTimeMax": 1,
+                     "transferMult": 60,
+                     "allocationPercent": 80
+                 }],
+                 "allocLogic": 1
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "stockQueue": [],
+                 "workQueue": [],
+                 "tranferQueue": [],
+                 "ANDwaitQueue": {},
+                 "fbtested": true
+             },
+             "objClass": "bpFunction",
+             "input": {
+                 "objects": []
+             },
+             "output": {
+                 "objects": []
+             },
+             "regulate": {
+                 "objects": []
+             },
+             "execute": {
+                 "objects": [],
+                 "execResource": 0
+             },
+             "support": {
+                 "objects": [{
+                     "obj": "060e31d5-c538-4279-b204-e9aab247",
+                     "costPerTask": false,
+                     "costValue": 0
+                 }, {
+                     "obj": "43f91ac9-ca7e-44bb-b0b1-855c94dd",
+                     "costPerTask": true,
+                     "costValue": 1
+                 }]
+             },
+             "runTimeMin": 10,
+             "runTimeMax": 10,
+             "runTimeMult": 60
+         },
+         "060e31d5-c538-4279-b204-e9aab247": {
+             "id": "060e31d5-c538-4279-b204-e9aab247",
+             "name": "Decision Support System",
+             "position": {
+                 "top": 220,
+                 "left": 780
+             },
+             "objType": "bpSubject",
+             "objClass": "bpSupport",
+             "count": 1,
+             "costValue": 0,
+             "costPeriod": 3600,
+             "_simulation": {
+                 "execCount": 0,
+                 "execTime": 0
+             }
+         },
+         "242b4210-f93b-4d64-a09c-b68ddd32": {
+             "id": "242b4210-f93b-4d64-a09c-b68ddd32",
+             "name": "Negative decision",
+             "position": {
+                 "top": 480,
+                 "left": 880
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "b359edcf-a995-4853-a872-3a20bb77",
+                     "localPriority": 0
+                 }, {
+                     "obj": "d2131c8a-5d27-4914-8057-ad4c65c3",
+                     "localPriority": 0
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "0e24660c-97f4-48eb-a029-d431cb45",
+                     "transferTimeMin": 0,
+                     "transferTimeMax": 0,
+                     "transferMult": 60,
+                     "allocationPercent": 100
+                 }],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 2,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "fbtested": true
+             },
+             "objClass": "bpEvent"
+         },
+         "d2131c8a-5d27-4914-8057-ad4c65c3": {
+             "id": "d2131c8a-5d27-4914-8057-ad4c65c3",
+             "name": "Data verification",
+             "position": {
+                 "top": 360,
+                 "left": 500
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "b359edcf-a995-4853-a872-3a20bb77"
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "242b4210-f93b-4d64-a09c-b68ddd32",
+                     "transferTimeMin": 1,
+                     "transferTimeMax": 1,
+                     "transferMult": 60,
+                     "allocationPercent": 10
+                 }, {
+                     "obj": "6fe19031-3ec5-47d8-b43d-cf9143c2",
+                     "transferTimeMin": 10,
+                     "transferTimeMax": 30,
+                     "transferMult": 60,
+                     "allocationPercent": 90
+                 }],
+                 "allocLogic": 1
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "stockQueue": [],
+                 "workQueue": [],
+                 "tranferQueue": [],
+                 "ANDwaitQueue": {},
+                 "fbtested": false
+             },
+             "objClass": "bpFunction",
+             "input": {
+                 "objects": []
+             },
+             "output": {
+                 "objects": []
+             },
+             "regulate": {
+                 "objects": []
+             },
+             "execute": {
+                 "objects": [{
+                     "obj": "3a24ea26-aa12-47a3-bab1-c5e5caa9",
+                     "costPerTask": false,
+                     "costValue": 0,
+                     "priority": 0
+                 }],
+                 "execResource": 0
+             },
+             "support": {
+                 "objects": []
+             },
+             "runTimeMin": 10,
+             "runTimeMax": 15,
+             "runTimeMult": 60
+         },
+         "3a24ea26-aa12-47a3-bab1-c5e5caa9": {
+             "id": "3a24ea26-aa12-47a3-bab1-c5e5caa9",
+             "name": "Loan Officer",
+             "position": {
+                 "top": 580,
+                 "left": 700
+             },
+             "objType": "bpSubject",
+             "objClass": "bpExecute",
+             "count": 11,
+             "costValue": 600,
+             "costPeriod": 3600,
+             "timeRanges": [{
+                 "fromSec": 32400,
+                 "toSec": 46800
+             }, {
+                 "fromSec": 50400,
+                 "toSec": 64800
+             }],
+             "_simulation": {
+                 "resources": ["2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z"]
+             }
+         },
+         "6fe19031-3ec5-47d8-b43d-cf9143c2": {
+             "id": "6fe19031-3ec5-47d8-b43d-cf9143c2",
+             "name": "Clients notification",
+             "position": {
+                 "top": 480,
+                 "left": 300
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "d2131c8a-5d27-4914-8057-ad4c65c3"
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "e3ea795a-40a1-47a2-82b6-9851bc0e",
+                     "transferTimeMin": 0,
+                     "transferTimeMax": 0,
+                     "transferMult": 60,
+                     "allocationPercent": 100
+                 }],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "stockQueue": [],
+                 "workQueue": [],
+                 "tranferQueue": [],
+                 "ANDwaitQueue": {},
+                 "fbtested": false
+             },
+             "objClass": "bpFunction",
+             "input": {
+                 "objects": []
+             },
+             "output": {
+                 "objects": []
+             },
+             "regulate": {
+                 "objects": []
+             },
+             "execute": {
+                 "objects": [{
+                     "obj": "5d4a5475-64c7-4801-8125-7883134e",
+                     "costPerTask": false,
+                     "costValue": 0,
+                     "priority": 0
+                 }],
+                 "execResource": 0
+             },
+             "support": {
+                 "objects": []
+             },
+             "runTimeMin": 5,
+             "runTimeMax": 10,
+             "runTimeMult": 60
+         },
+         "5d4a5475-64c7-4801-8125-7883134e": {
+             "id": "5d4a5475-64c7-4801-8125-7883134e",
+             "name": "Call center operator",
+             "position": {
+                 "top": 520,
+                 "left": 500
+             },
+             "objType": "bpSubject",
+             "objClass": "bpExecute",
+             "count": 5,
+             "costValue": 600,
+             "costPeriod": 3600,
+             "timeRanges": [{
+                 "fromSec": 0,
+                 "toSec": 86400
+             }],
+             "_simulation": {
+                 "resources": ["2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z", "2015-03-24T06:00:00.000Z"]
+             }
+         },
+         "43f91ac9-ca7e-44bb-b0b1-855c94dd": {
+             "id": "43f91ac9-ca7e-44bb-b0b1-855c94dd",
+             "name": "Request of credit history",
+             "position": {
+                 "top": 280,
+                 "left": 780
+             },
+             "objType": "bpSubject",
+             "objClass": "bpSupport",
+             "count": 1,
+             "costValue": 0,
+             "costPeriod": 3600,
+             "_simulation": {
+                 "execCount": 0,
+                 "execTime": 0
+             }
+         },
+         "0e24660c-97f4-48eb-a029-d431cb45": {
+             "id": "0e24660c-97f4-48eb-a029-d431cb45",
+             "name": "Clients notification",
+             "position": {
+                 "top": 620,
+                 "left": 880
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "242b4210-f93b-4d64-a09c-b68ddd32"
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "a4596339-e9df-49a7-809a-e7a53c18",
+                     "transferTimeMin": 0,
+                     "transferTimeMax": 0,
+                     "transferMult": 60,
+                     "allocationPercent": 100
+                 }],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "stockQueue": [],
+                 "workQueue": [],
+                 "tranferQueue": [],
+                 "ANDwaitQueue": {},
+                 "fbtested": true
+             },
+             "objClass": "bpFunction",
+             "input": {
+                 "objects": []
+             },
+             "output": {
+                 "objects": []
+             },
+             "regulate": {
+                 "objects": []
+             },
+             "execute": {
+                 "objects": [],
+                 "execResource": 0
+             },
+             "support": {
+                 "objects": [{
+                     "obj": "cf0ff8b4-1d8b-43c2-a091-c7c42d4f",
+                     "costPerTask": true,
+                     "costValue": 1
+                 }]
+             },
+             "runTimeMin": 1,
+             "runTimeMax": 1,
+             "runTimeMult": 60
+         },
+         "cf0ff8b4-1d8b-43c2-a091-c7c42d4f": {
+             "id": "cf0ff8b4-1d8b-43c2-a091-c7c42d4f",
+             "name": "Remote banking service",
+             "position": {
+                 "top": 640,
+                 "left": 1080
+             },
+             "objType": "bpSubject",
+             "objClass": "bpSupport",
+             "count": 1,
+             "costValue": 0,
+             "costPeriod": 3600,
+             "_simulation": {
+                 "execCount": 0,
+                 "execTime": 0
+             }
+         },
+         "e3ea795a-40a1-47a2-82b6-9851bc0e": {
+             "id": "e3ea795a-40a1-47a2-82b6-9851bc0e",
+             "name": "Clients visit",
+             "position": {
+                 "top": 580,
+                 "left": 300
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "6fe19031-3ec5-47d8-b43d-cf9143c2",
+                     "localPriority": 0
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "b2ee8383-55cf-4ad5-9f61-0a92f80a",
+                     "transferTimeMin": 0,
+                     "transferTimeMax": 0,
+                     "transferMult": 60,
+                     "allocationPercent": 100
+                 }],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "fbtested": false
+             },
+             "objClass": "bpEvent"
+         },
+         "b2ee8383-55cf-4ad5-9f61-0a92f80a": {
+             "id": "b2ee8383-55cf-4ad5-9f61-0a92f80a",
+             "name": "Credit of funds",
+             "position": {
+                 "top": 640,
+                 "left": 300
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "e3ea795a-40a1-47a2-82b6-9851bc0e",
+                     "localPriority": 0
+                 }],
+                 "execLogic": 0
+             },
+             "next": {
+                 "objects": [{
+                     "obj": "de248cd3-d13a-490c-980d-dfbb3d1c",
+                     "transferTimeMin": 0,
+                     "transferTimeMax": 0,
+                     "transferMult": 60,
+                     "allocationPercent": 100
+                 }],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "stockQueue": [],
+                 "workQueue": [],
+                 "tranferQueue": [],
+                 "ANDwaitQueue": {},
+                 "fbtested": false
+             },
+             "objClass": "bpFunction",
+             "input": {
+                 "objects": []
+             },
+             "output": {
+                 "objects": []
+             },
+             "regulate": {
+                 "objects": []
+             },
+             "execute": {
+                 "objects": [{
+                     "obj": "3a24ea26-aa12-47a3-bab1-c5e5caa9",
+                     "costPerTask": false,
+                     "costValue": 0,
+                     "priority": 0
+                 }],
+                 "execResource": 0
+             },
+             "support": {
+                 "objects": [{
+                     "obj": "30048bf4-c280-42c8-a656-92a91b3e",
+                     "costPerTask": false,
+                     "costValue": 0
+                 }]
+             },
+             "runTimeMin": 1,
+             "runTimeMax": 1,
+             "runTimeMult": 60
+         },
+         "30048bf4-c280-42c8-a656-92a91b3e": {
+             "id": "30048bf4-c280-42c8-a656-92a91b3e",
+             "name": "Automated Banking System",
+             "position": {
+                 "top": 700,
+                 "left": 500
+             },
+             "objType": "bpSubject",
+             "objClass": "bpSupport",
+             "count": 1,
+             "costValue": 0,
+             "costPeriod": 3600,
+             "_simulation": {
+                 "execCount": 0,
+                 "execTime": 0
+             }
+         },
+         "de248cd3-d13a-490c-980d-dfbb3d1c": {
+             "id": "de248cd3-d13a-490c-980d-dfbb3d1c",
+             "name": "The process purpose is reached",
+             "position": {
+                 "top": 740,
+                 "left": 300
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "b2ee8383-55cf-4ad5-9f61-0a92f80a",
+                     "localPriority": 0
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "tranferQueue": [],
+                 "sumTaskCost": 0,
+                 "sumTaskTime": 0,
+                 "sumTaskCount": 0,
+                 "fbtested": false
+             },
+             "objClass": "bpCheckPoint"
+         },
+         "a4596339-e9df-49a7-809a-e7a53c18": {
+             "id": "a4596339-e9df-49a7-809a-e7a53c18",
+             "name": "Losses",
+             "position": {
+                 "top": 740,
+                 "left": 880
+             },
+             "objType": "bpObject",
+             "prior": {
+                 "objects": [{
+                     "obj": "0e24660c-97f4-48eb-a029-d431cb45",
+                     "localPriority": 0
+                 }],
+                 "execLogic": 1
+             },
+             "next": {
+                 "objects": [],
+                 "allocLogic": 0
+             },
+             "_simulation": {
+                 "routedcount": 1,
+                 "executed": true,
+                 "passedCount": 0,
+                 "lastRunTime": "2015-03-24T06:00:00.000Z",
+                 "tranferQueue": [],
+                 "sumTaskCost": 0,
+                 "sumTaskTime": 0,
+                 "sumTaskCount": 0,
+                 "fbtested": true
+             },
+             "objClass": "bpCheckPoint"
+         },
+         "027f1d84-fa25-451b-aca8-b98db87a": {
+             "id": "027f1d84-fa25-451b-aca8-b98db87a",
+             "name": "Payment for each request",
+             "position": {
+                 "top": 280,
+                 "left": 960
+             },
+             "objType": "bpSubject",
+             "objClass": "bpComment",
+             "_simulation": {}
+         },
+         "9c2a087d-1ce9-4035-be2f-dd19be5a": {
+             "id": "9c2a087d-1ce9-4035-be2f-dd19be5a",
+             "name": "Payment for sending SMS messages",
+             "position": {
+                 "top": 600,
+                 "left": 1080
+             },
+             "objType": "bpSubject",
+             "objClass": "bpComment",
+             "_simulation": {}
+         },
+         "606c59a2-004a-4785-8007-7a507e31": {
+             "id": "606c59a2-004a-4785-8007-7a507e31",
+             "name": "Approved Rate 28%",
+             "position": {
+                 "top": 480,
+                 "left": 1060
+             },
+             "objType": "bpSubject",
+             "objClass": "bpComment",
+             "_simulation": {}
+         },
+         "61c40fb8-e50e-4225-8ab0-66fe1cc9": {
+             "id": "61c40fb8-e50e-4225-8ab0-66fe1cc9",
+             "name": "Operators are available around the clock",
+             "position": {
+                 "top": 460,
+                 "left": 500
+             },
+             "objType": "bpSubject",
+             "objClass": "bpComment",
+             "_simulation": {}
+         },
+         "f9e99984-59ca-4953-905c-72a56d39": {
+             "id": "f9e99984-59ca-4953-905c-72a56d39",
+             "name": "10 of service points, each with 4 of the request in an hour, there is a break for lunch",
+             "position": {
+                 "top": 20,
+                 "left": 740
+             },
+             "objType": "bpSubject",
+             "objClass": "bpComment",
+             "_simulation": {}
+         },
+         "9be45f6e-a196-420f-aea8-b6c4f155": {
+             "id": "9be45f6e-a196-420f-aea8-b6c4f155",
+             "name": "To start of simulation click the Run button in the Simulation section",
+             "position": {
+                 "top": 300,
+                 "left": 300
+             },
+             "objType": "bpSubject",
+             "objClass": "bpComment",
+             "_simulation": {}
+         },
+         "cc1c4d21-5edc-41a1-acb8-d54a407e": {
+             "id": "cc1c4d21-5edc-41a1-acb8-d54a407e",
+             "name": "The Dashboard open button is located in the View section",
+             "position": {
+                 "top": 720,
+                 "left": 20
+             },
+             "objType": "bpSubject",
+             "objClass": "bpComment",
+             "_simulation": {}
+         }
+     },
+     "langpack": [{
+         "lang": "ru",
+         "messages": {
+             "Visit the customer to make an application": "Визит клиента для оформления заявки",
+             "10 of service points, each with 4 of the request in an hour, there is a break for lunch": "10 точек обслуживания, в каждой по 4 оформления заявки в час, есть перерыв на обед",
+             "Making loan application": "Создание заявки на кредит",
+             "Account Manager": "Менеджер по работе с клиентами",
+             "Loan scoring": "Кредитный скоринг",
+             "Decision Support System": "Система принятия решения",
+             "Request of credit history": "Запрос кредитной истории",
+             "Payment for each request": "Оплата за каждый запрос",
+             "Data verification": "Верификация данных",
+             "Negative decision": "Принято отрицательное решение",
+             "Approved Rate 28%": "28% отказа",
+             "Clients notification": "Уведомление клиента",
+             "Call center operator": "Оператор колл-центра",
+             "Operators are available around the clock": "Операторы доступны круглосуточно",
+             "Clients visit": "Визит клиента",
+             "Credit of funds": "Выдача кредита",
+             "Automated Banking System": "Автоматизированная банковская система",
+             "The process purpose is reached": "Цель процесса достигнута",
+             "Remote banking service": "Система дистанционного банковского обслуживания",
+             "Payment for sending SMS messages": "Оплата за отправку СМС-сообщения",
+             "Losses": "Потери",
+             "Retail lending": "Розничное кредитование",
+             "To start of simulation click the Run button in the Simulation section": "Для начала симуляции нажмите кнопку Пуск в разделе Симуляция",
+             "The Dashboard open button is located in the View section": "Кнопка открытия Приборной панели находится в разделе Вид",
+             "Loan Officer": "Кредитный менеджер"
+         }
+     }, {
+         "lang": "es",
+         "messages": {
+             "Visit the customer to make an application": "Visite el cliente para hacer una solicitud",
+             "10 of service points, each with 4 of the request in an hour, there is a break for lunch": "10 puntos de servicio, cada una con 4 de la solicitud en una hora, hay una pausa para el almuerzo",
+             "Making loan application": "La aceptación de la solicitud de préstamo",
+             "Account Manager": "Gerente De Cuentas",
+             "Loan scoring": "La calificación crediticia",
+             "Decision Support System": "Sistemas de soporte a decisiones",
+             "Request of credit history": "Solicitud de historial de crédito",
+             "Payment for each request": "El pago de cada solicitud",
+             "Data verification": "Verificación de los datos",
+             "Negative decision": "Decisión negativa",
+             "Approved Rate 28%": "Tasa Aprobado 28%",
+             "Clients notification": "Notificación clientes",
+             "Call center operator": "Operador de call center",
+             "Operators are available around the clock": "Los operadores están disponibles durante todo el día",
+             "Clients visit": "Visita el cliente",
+             "Credit of funds": "Crédito de fondos",
+             "Automated Banking System": "Sistema de compensación bancaria automatizada",
+             "The process purpose is reached": "Se alcanza el objetivo proceso",
+             "Remote banking service": "Banca Electrónica",
+             "Payment for sending SMS messages": "El pago para el envío de mensajes SMS",
+             "Losses": "Peaje",
+             "Retail lending": "Los créditos minoristas se",
+             "To start of simulation click the Run button in the Simulation section": "Para iniciar la simulación, haga clic en el botón Ejecutar en la sección Simulación",
+             "The Dashboard open button is located in the View section": "El botón de apertura del Dashboard se encuentra en la sección Ver",
+             "Loan Officer": "Gerente de Crédito"
+         }
+     }, {
+         "lang": "fr",
+         "messages": {
+             "Visit the customer to make an application": "Visitez le client de faire une demande",
+             "10 of service points, each with 4 of the request in an hour, there is a break for lunch": "10 des points de service, chacune avec 4 de la demande dans une heure, il ya une pause pour le déjeuner",
+             "Making loan application": "Faire demande de prêt",
+             "Account Manager": "Gestionnaire de compte",
+             "Loan scoring": "Notation de prêt",
+             "Decision Support System": "Système d'aide à la décision",
+             "Request of credit history": "Demande de l'histoire de crédit",
+             "Payment for each request": "Le paiement pour chaque demande",
+             "Data verification": "Vérification des données",
+             "Negative decision": "Décision négative",
+             "Approved Rate 28%": "Taux Approuvé 28%",
+             "Clients notification": "Notification des clients",
+             "Call center operator": "Opérateur de centre d'appels",
+             "Operators are available around the clock": "Les opérateurs sont disponibles autour de l'horloge",
+             "Clients visit": "Les clients visitent",
+             "Credit of funds": "Crédit de fonds",
+             "Automated Banking System": "Système bancaire automatisé",
+             "The process purpose is reached": "Le but du processus est atteint",
+             "Remote banking service": "Service de banque à distance",
+             "Payment for sending SMS messages": "Le paiement de l'envoi de SMS",
+             "Losses": "Des pertes",
+             "Retail lending": "Prêts de détail",
+             "To start of simulation click the Run button in the Simulation section": "Pour démarrer la simulation cliquez sur le bouton Exécuter dans la section de simulation",
+             "The Dashboard open button is located in the View section": "Le bouton d'ouverture du tableau de bord est situé dans la section de Vue",
+             "Loan Officer": "Agent de crédit"
+         }
+     }]
+ }

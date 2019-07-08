@@ -1,0 +1,44 @@
+﻿#caption {
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	font: bold 11px Tahoma, sans-serif;
+	text-align: center;
+	padding: 1px 5px;
+	display: none;
+}
+
+#bpm-figures .bpm-actived path,#bpm-figures .bpm-actived rect {
+	stroke-width: 2;
+}
+
+#bpm-connect a path.long {
+	stroke-opacity: .4;
+}
+
+#bpm-connect a {
+	cursor: default;
+}
+
+#bpm-connect a.deleted {
+	cursor: pointer;
+}
+
+#bpm-connect a.deleted path:first-child {
+	stroke-dasharray: 14;
+}
+
+.bpm-recived {
+	cursor: copy;
+}
+
+.bpm-recived-disabled {
+	opacity: 0.6;
+}
+
+.bpm-obj.bpm-actived>text {
+	fill: none;
+}
+
+.bpm-obj.selected {
+	fill-opacity: 0.6;
+}

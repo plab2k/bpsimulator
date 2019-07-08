@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>LAB2K</Machine>
+    <WindowsUser>1</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>77987233-cce2-4a9c-833f-e21d28300546</PackageIdentityName>
+    <IntermediateOutputPath>D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>C88C382091101E49EFC6F108E3AE0B07177C867C0AF10AE25C164A5188238A01</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>41750prolislab2k.BPSimulator_1.1.4.0_neutral__cwbef1pkh40sp</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>41750prolislab2k.BPSimulator_cwbef1pkh40sp!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>41750prolislab2k.BPSimulator</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=E58BE49E-0780-4B98-B375-9D1350A15C4F</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.4.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-09-13T16:07:58.682</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\bpctrlpanel.css">
+      <PackagePath>css\bpctrlpanel.css</PackagePath>
+      <Modified>2015-09-12T13:02:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\bpdialog.css">
+      <PackagePath>css\bpdialog.css</PackagePath>
+      <Modified>2015-09-12T15:32:17.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\bpmodeler.css">
+      <PackagePath>css\bpmodeler.css</PackagePath>
+      <Modified>2015-09-12T13:02:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\common.css">
+      <PackagePath>css\common.css</PackagePath>
+      <Modified>2015-09-12T15:33:27.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\header.css">
+      <PackagePath>css\header.css</PackagePath>
+      <Modified>2015-09-12T13:02:55.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\vendor\normalize.css">
+      <PackagePath>css\vendor\normalize.css</PackagePath>
+      <Modified>2015-09-12T15:32:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2015-09-10T14:14:17.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\css\ui-dark.css">
+      <PackagePath>WinJS\css\ui-dark.css</PackagePath>
+      <Modified>2015-07-17T18:20:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\css\ui-light.css">
+      <PackagePath>WinJS\css\ui-light.css</PackagePath>
+      <Modified>2015-07-17T18:20:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\demos\1.json">
+      <PackagePath>demos\1.json</PackagePath>
+      <Modified>2015-08-16T09:48:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\api\api.js">
+      <PackagePath>js\api\api.js</PackagePath>
+      <Modified>2015-09-13T12:45:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\app\core.js">
+      <PackagePath>js\app\core.js</PackagePath>
+      <Modified>2015-09-12T16:38:22.714</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\app\options.js">
+      <PackagePath>js\app\options.js</PackagePath>
+      <Modified>2015-09-12T16:38:21.944</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\app\states.js">
+      <PackagePath>js\app\states.js</PackagePath>
+      <Modified>2015-09-12T16:38:21.240</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\common\common.js">
+      <PackagePath>js\common\common.js</PackagePath>
+      <Modified>2015-09-12T14:17:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\common\dbltap.js">
+      <PackagePath>js\common\dbltap.js</PackagePath>
+      <Modified>2015-09-12T14:17:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\common\helper.js">
+      <PackagePath>js\common\helper.js</PackagePath>
+      <Modified>2015-09-12T14:17:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\lang\es.js">
+      <PackagePath>js\lang\es.js</PackagePath>
+      <Modified>2015-09-12T14:19:13.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\lang\ru.js">
+      <PackagePath>js\lang\ru.js</PackagePath>
+      <Modified>2015-09-12T14:19:13.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\area.js">
+      <PackagePath>js\modules\area.js</PackagePath>
+      <Modified>2015-09-12T14:25:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\autosave.js">
+      <PackagePath>js\modules\autosave.js</PackagePath>
+      <Modified>2015-09-12T14:25:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\calc.js">
+      <PackagePath>js\modules\calc.js</PackagePath>
+      <Modified>2015-09-12T14:25:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\dblclick.js">
+      <PackagePath>js\modules\dblclick.js</PackagePath>
+      <Modified>2015-09-12T14:25:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\errors.js">
+      <PackagePath>js\modules\errors.js</PackagePath>
+      <Modified>2015-09-12T14:25:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\collector.js">
+      <PackagePath>js\modules\simulation\collector.js</PackagePath>
+      <Modified>2015-09-12T14:22:17.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\control.js">
+      <PackagePath>js\modules\simulation\control.js</PackagePath>
+      <Modified>2015-09-12T14:22:17.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\execute.js">
+      <PackagePath>js\modules\simulation\execute.js</PackagePath>
+      <Modified>2015-09-12T14:22:17.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\init.js">
+      <PackagePath>js\modules\simulation\init.js</PackagePath>
+      <Modified>2015-09-12T14:22:17.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\log.js">
+      <PackagePath>js\modules\simulation\log.js</PackagePath>
+      <Modified>2015-09-12T14:22:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\snackbar.js">
+      <PackagePath>js\modules\snackbar.js</PackagePath>
+      <Modified>2015-09-12T14:25:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\globalize.culture.es.js">
+      <PackagePath>js\vendor\globalize.culture.es.js</PackagePath>
+      <Modified>2015-09-12T14:27:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\globalize.culture.ru.js">
+      <PackagePath>js\vendor\globalize.culture.ru.js</PackagePath>
+      <Modified>2015-09-12T14:27:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\globalize.js">
+      <PackagePath>js\vendor\globalize.js</PackagePath>
+      <Modified>2015-09-12T14:27:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\jquery-2.1.4.js">
+      <PackagePath>js\vendor\jquery-2.1.4.js</PackagePath>
+      <Modified>2015-09-12T16:41:09.080</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\jquery-ui-1.11.4.js">
+      <PackagePath>js\vendor\jquery-ui-1.11.4.js</PackagePath>
+      <Modified>2015-09-12T16:41:07.871</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\ctrlpanel.js">
+      <PackagePath>js\widget\ctrlpanel.js</PackagePath>
+      <Modified>2015-09-12T14:28:15.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\dashboard.js">
+      <PackagePath>js\widget\dashboard.js</PackagePath>
+      <Modified>2015-09-12T14:28:15.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\dialogs.js">
+      <PackagePath>js\widget\dialogs.js</PackagePath>
+      <Modified>2015-09-12T14:28:15.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\floatbtn.js">
+      <PackagePath>js\widget\floatbtn.js</PackagePath>
+      <Modified>2015-09-12T14:28:15.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\modeler.js">
+      <PackagePath>js\widget\modeler.js</PackagePath>
+      <Modified>2015-09-13T12:42:19.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\objdetail.js">
+      <PackagePath>js\widget\objdetail.js</PackagePath>
+      <Modified>2015-09-12T14:28:15.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\timeranges.js">
+      <PackagePath>js\widget\timeranges.js</PackagePath>
+      <Modified>2015-09-12T14:28:15.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js-buildinfo\debug.js">
+      <PackagePath>js-buildinfo\debug.js</PackagePath>
+      <Modified>2015-09-06T18:38:15.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js-buildinfo\release.js">
+      <PackagePath>js-buildinfo\release.js</PackagePath>
+      <Modified>2015-09-06T18:39:27.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\buildinfo.js">
+      <PackagePath>js\buildinfo.js</PackagePath>
+      <Modified>2015-09-06T18:39:27.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\common\win_solver.js">
+      <PackagePath>js\common\win_solver.js</PackagePath>
+      <Modified>2015-09-10T11:46:27.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\modules\storage\win_local.js">
+      <PackagePath>js\modules\storage\win_local.js</PackagePath>
+      <Modified>2015-09-11T17:30:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\win_controller.js">
+      <PackagePath>js\win_controller.js</PackagePath>
+      <Modified>2015-09-11T17:29:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2015-09-13T12:58:55.311</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\modules\win_events.js">
+      <PackagePath>js\modules\win_events.js</PackagePath>
+      <Modified>2015-08-24T10:14:59.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\js\en-US\ui.strings.js">
+      <PackagePath>WinJS\js\en-US\ui.strings.js</PackagePath>
+      <Modified>2015-05-27T15:15:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\js\base.js">
+      <PackagePath>WinJS\js\base.js</PackagePath>
+      <Modified>2015-07-17T18:20:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\js\ui.js">
+      <PackagePath>WinJS\js\ui.js</PackagePath>
+      <Modified>2015-07-17T18:20:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2015-09-10T11:26:04.435</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Icon.256.png">
+      <PackagePath>images\Icon.256.png</PackagePath>
+      <Modified>2015-09-10T09:16:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\LockScreenLogo.scale-200.png">
+      <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2015-09-09T11:43:13.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\SplashScreen.scale-200.png">
+      <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
+      <Modified>2015-09-09T11:59:05.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Square150x150Logo.scale-200.png">
+      <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
+      <Modified>2015-09-09T17:21:35.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Square44x44Logo.scale-200.png">
+      <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
+      <Modified>2015-09-09T17:31:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <Modified>2015-09-09T15:50:13.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\StoreLogo.scale-100.png">
+      <PackagePath>images\StoreLogo.scale-100.png</PackagePath>
+      <Modified>2015-09-09T17:33:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Wide310x150Logo.scale-200.png">
+      <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
+      <Modified>2015-09-09T17:28:11.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\fonts\Symbols.ttf">
+      <PackagePath>WinJS\fonts\Symbols.ttf</PackagePath>
+      <Modified>2015-05-27T15:15:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-09-13T16:07:55.365</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

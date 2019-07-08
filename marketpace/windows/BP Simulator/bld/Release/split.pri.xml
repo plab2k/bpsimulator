@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="41750prolislab2k.BPSimulator" version="1.0" primary="true">
+		<Qualifiers>
+			<AlternateForm>UNPLATED</AlternateForm>
+			<Language>EN-US</Language>
+			<Scale>200</Scale>
+			<TargetSize>24</TargetSize>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="default.html" uri="ms-resource://41750prolislab2k.BPSimulator/Files/default.html">
+				<Candidate type="Path">
+					<Value>default.html</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="css">
+				<NamedResource name="bpctrlpanel.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/css/bpctrlpanel.css">
+					<Candidate type="Path">
+						<Value>css\bpctrlpanel.css</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="bpdialog.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/css/bpdialog.css">
+					<Candidate type="Path">
+						<Value>css\bpdialog.css</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="bpmodeler.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/css/bpmodeler.css">
+					<Candidate type="Path">
+						<Value>css\bpmodeler.css</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="common.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/css/common.css">
+					<Candidate type="Path">
+						<Value>css\common.css</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="default.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/css/default.css">
+					<Candidate type="Path">
+						<Value>css\default.css</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="header.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/css/header.css">
+					<Candidate type="Path">
+						<Value>css\header.css</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="vendor">
+					<NamedResource name="normalize.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/css/vendor/normalize.css">
+						<Candidate type="Path">
+							<Value>css\vendor\normalize.css</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="demos">
+				<NamedResource name="1.json" uri="ms-resource://41750prolislab2k.BPSimulator/Files/demos/1.json">
+					<Candidate type="Path">
+						<Value>demos\1.json</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="images">
+				<NamedResource name="Icon.256.png" uri="ms-resource://41750prolislab2k.BPSimulator/Files/images/Icon.256.png">
+					<Candidate type="Path">
+						<Value>images\Icon.256.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LockScreenLogo.png" uri="ms-resource://41750prolislab2k.BPSimulator/Files/images/LockScreenLogo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>images\LockScreenLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://41750prolislab2k.BPSimulator/Files/images/SplashScreen.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>images\SplashScreen.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square150x150Logo.png" uri="ms-resource://41750prolislab2k.BPSimulator/Files/images/Square150x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>images\Square150x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square44x44Logo.png" uri="ms-resource://41750prolislab2k.BPSimulator/Files/images/Square44x44Logo.png">
+					<Candidate qualifiers="TargetSize-24, AlternateForm-UNPLATED" type="Path">
+						<Value>images\Square44x44Logo.targetsize-24_altform-unplated.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>images\Square44x44Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://41750prolislab2k.BPSimulator/Files/images/StoreLogo.png"/>
+				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://41750prolislab2k.BPSimulator/Files/images/Wide310x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>images\Wide310x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="js">
+				<NamedResource name="buildinfo.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/buildinfo.js">
+					<Candidate type="Path">
+						<Value>js\buildinfo.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="default.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/default.js">
+					<Candidate type="Path">
+						<Value>js\default.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="win_controller.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/win_controller.js">
+					<Candidate type="Path">
+						<Value>js\win_controller.js</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="api">
+					<NamedResource name="api.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/api/api.js">
+						<Candidate type="Path">
+							<Value>js\api\api.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="app">
+					<NamedResource name="core.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/app/core.js">
+						<Candidate type="Path">
+							<Value>js\app\core.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="options.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/app/options.js">
+						<Candidate type="Path">
+							<Value>js\app\options.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="states.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/app/states.js">
+						<Candidate type="Path">
+							<Value>js\app\states.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="common">
+					<NamedResource name="common.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/common/common.js">
+						<Candidate type="Path">
+							<Value>js\common\common.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="dbltap.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/common/dbltap.js">
+						<Candidate type="Path">
+							<Value>js\common\dbltap.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="helper.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/common/helper.js">
+						<Candidate type="Path">
+							<Value>js\common\helper.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="win_solver.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/common/win_solver.js">
+						<Candidate type="Path">
+							<Value>js\common\win_solver.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="lang">
+					<NamedResource name="es.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/lang/es.js">
+						<Candidate type="Path">
+							<Value>js\lang\es.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ru.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/lang/ru.js">
+						<Candidate type="Path">
+							<Value>js\lang\ru.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="modules">
+					<NamedResource name="area.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/area.js">
+						<Candidate type="Path">
+							<Value>js\modules\area.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="autosave.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/autosave.js">
+						<Candidate type="Path">
+							<Value>js\modules\autosave.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="calc.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/calc.js">
+						<Candidate type="Path">
+							<Value>js\modules\calc.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="dblclick.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/dblclick.js">
+						<Candidate type="Path">
+							<Value>js\modules\dblclick.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="errors.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/errors.js">
+						<Candidate type="Path">
+							<Value>js\modules\errors.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="snackbar.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/snackbar.js">
+						<Candidate type="Path">
+							<Value>js\modules\snackbar.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="win_events.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/win_events.js">
+						<Candidate type="Path">
+							<Value>js\modules\win_events.js</Value>
+						</Candidate>
+					</NamedResource>
+					<ResourceMapSubtree name="simulation">
+						<NamedResource name="collector.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/simulation/collector.js">
+							<Candidate type="Path">
+								<Value>js\modules\simulation\collector.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="control.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/simulation/control.js">
+							<Candidate type="Path">
+								<Value>js\modules\simulation\control.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="execute.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/simulation/execute.js">
+							<Candidate type="Path">
+								<Value>js\modules\simulation\execute.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="init.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/simulation/init.js">
+							<Candidate type="Path">
+								<Value>js\modules\simulation\init.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="log.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/simulation/log.js">
+							<Candidate type="Path">
+								<Value>js\modules\simulation\log.js</Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="storage">
+						<NamedResource name="win_local.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/modules/storage/win_local.js">
+							<Candidate type="Path">
+								<Value>js\modules\storage\win_local.js</Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="vendor">
+					<NamedResource name="globalize.culture.es.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/vendor/globalize.culture.es.js">
+						<Candidate type="Path">
+							<Value>js\vendor\globalize.culture.es.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="globalize.culture.ru.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/vendor/globalize.culture.ru.js">
+						<Candidate type="Path">
+							<Value>js\vendor\globalize.culture.ru.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="globalize.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/vendor/globalize.js">
+						<Candidate type="Path">
+							<Value>js\vendor\globalize.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="jquery-2.1.4.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/vendor/jquery-2.1.4.js">
+						<Candidate type="Path">
+							<Value>js\vendor\jquery-2.1.4.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="jquery-ui-1.11.4.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/vendor/jquery-ui-1.11.4.js">
+						<Candidate type="Path">
+							<Value>js\vendor\jquery-ui-1.11.4.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="widget">
+					<NamedResource name="ctrlpanel.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/widget/ctrlpanel.js">
+						<Candidate type="Path">
+							<Value>js\widget\ctrlpanel.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="dashboard.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/widget/dashboard.js">
+						<Candidate type="Path">
+							<Value>js\widget\dashboard.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="dialogs.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/widget/dialogs.js">
+						<Candidate type="Path">
+							<Value>js\widget\dialogs.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="floatbtn.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/widget/floatbtn.js">
+						<Candidate type="Path">
+							<Value>js\widget\floatbtn.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="modeler.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/widget/modeler.js">
+						<Candidate type="Path">
+							<Value>js\widget\modeler.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="objdetail.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/widget/objdetail.js">
+						<Candidate type="Path">
+							<Value>js\widget\objdetail.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="timeranges.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js/widget/timeranges.js">
+						<Candidate type="Path">
+							<Value>js\widget\timeranges.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="js-buildinfo">
+				<NamedResource name="debug.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js-buildinfo/debug.js">
+					<Candidate type="Path">
+						<Value>js-buildinfo\debug.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="release.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/js-buildinfo/release.js">
+					<Candidate type="Path">
+						<Value>js-buildinfo\release.js</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="WinJS">
+				<ResourceMapSubtree name="css">
+					<NamedResource name="ui-dark.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/WinJS/css/ui-dark.css">
+						<Candidate type="Path">
+							<Value>WinJS\css\ui-dark.css</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ui-light.css" uri="ms-resource://41750prolislab2k.BPSimulator/Files/WinJS/css/ui-light.css">
+						<Candidate type="Path">
+							<Value>WinJS\css\ui-light.css</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="fonts">
+					<NamedResource name="Symbols.ttf" uri="ms-resource://41750prolislab2k.BPSimulator/Files/WinJS/fonts/Symbols.ttf">
+						<Candidate type="Path">
+							<Value>WinJS\fonts\Symbols.ttf</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="js">
+					<NamedResource name="base.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/WinJS/js/base.js">
+						<Candidate type="Path">
+							<Value>WinJS\js\base.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ui.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/WinJS/js/ui.js">
+						<Candidate type="Path">
+							<Value>WinJS\js\ui.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ui.strings.js" uri="ms-resource://41750prolislab2k.BPSimulator/Files/WinJS/js/ui.strings.js">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="Path">
+							<Value>WinJS\js\en-US\ui.strings.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

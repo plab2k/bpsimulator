@@ -1,0 +1,45 @@
+{
+  "name": "__MSG_appName__",
+  "short_name": "__MSG_appShortName__",
+  "description": "__MSG_appDesc__",
+  "version": "2.8.0",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "offline_enabled": true,
+  "author": "prolis lab2k",
+  "container" : ["DOMAIN_INSTALLABLE","GOOGLE_DRIVE"],
+  "api_console_project_id" : "1086928993551",
+  "gdrive_mime_types": {
+      "http://drive.google.com/intents/opendrivedoc": [
+        {
+          "type": ["application/json","application/vnd.google.drive.ext-type.json"],
+          "href": "https://www.bpsimulator.com/run/",
+          "title" : "Open",
+          "disposition" : "window"
+        },
+        {
+          "type": ["application/xml","application/vnd.google.drive.ext-type.xml","application/vnd.google.drive.ext-type.bpmn","application/vnd.google.drive.ext-type.vsdx","application/vnd.google.drive.ext-type.vsdm"],
+          "href": "https://www.bpsimulator.com/run/",
+          "title" : "Import",
+          "disposition" : "window"
+        }
+      ]
+    },
+  "icons": {
+  "16": "icons/16.png",
+  "32": "icons/32.png",
+  "48": "icons/48.png",
+  "64": "icons/64.png",
+  "96": "icons/96.png",
+  "128": "icons/128.png",
+  "256": "icons/256.png"
+  },
+  "app": { 
+    "launch": {
+      "web_url": "https://www.bpsimulator.com/run/?utm_source=cws"
+    }
+  },
+  "permissions": [
+  "unlimitedStorage"
+]
+}

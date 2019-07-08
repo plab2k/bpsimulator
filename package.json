@@ -1,0 +1,31 @@
+{
+    "name": "bpsimulator",
+    "version": "1.0.0",
+    "description": "BP Simulator",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "prolis lab2k",
+    "license": "ISC",
+    "devDependencies": {
+        "del": "^2.2.2",
+        "fs": "0.0.1-security",
+        "gulp": "git://github.com/gulpjs/gulp.git#6d71a658c61edb3090221579d8f97dbe086ba2ed",
+        "gulp-clean-css": "^2.3.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-debug": "^3.2.0",
+        "gulp-replace": "^0.5.4",
+        "gulp-touch": "^1.0.1",
+        "gulp-uglify-es": "^1.0.4"
+    },
+    "dependencies": {
+        "del": "^2.2.2",
+        "fs": "^0.0.1-security",
+        "gulp": "git://github.com/gulpjs/gulp.git#6d71a658c61edb3090221579d8f97dbe086ba2ed",
+        "gulp-clean-css": "^2.3.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-debug": "^3.2.0",
+        "gulp-replace": "^0.5.4"
+    }
+}

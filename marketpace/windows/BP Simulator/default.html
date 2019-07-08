@@ -1,0 +1,1170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>BP_Simulator</title>
+
+    <!-- Ссылки WinJS -->
+    <link href="WinJS/css/ui-light.css" rel="stylesheet" />
+    <script src="WinJS/js/base.js"></script>
+    <script src="WinJS/js/ui.js"></script>
+
+
+    <script src="/js/buildinfo.js"></script>
+    
+
+    <!-- Ссылки BP_Simulator -->    
+    <link href="/css/vendor/normalize.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/common.css" rel="stylesheet" />
+    <link href="/css/bpctrlpanel.css" rel="stylesheet" />
+    <link href="/css/bpdialog.css" rel="stylesheet" />
+    <link href="/css/bpmodeler.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+
+    <script src="/js/vendor/jquery-2.1.4.js"></script>
+    <script src="/js/vendor/jquery-ui-1.11.4.js"></script>
+    <script src="/js/vendor/globalize.js"></script>
+    <script src="/js/vendor/globalize.culture.ru.js"></script>
+    <script src="/js/vendor/globalize.culture.es.js"></script>
+    <script src="/js/vendor/saveSvgAsPng.js"></script>
+    
+    <script src="/js/widget/dialogs.js"></script>
+    <script src="/js/widget/dashboard.js"></script>
+    <script src="/js/widget/modeler.js"></script>
+    <script src="/js/widget/objdetail.js"></script>
+    <script src="/js/widget/timeranges.js"></script>
+    <script src="/js/widget/ctrlpanel.js"></script>
+ 
+    <script src="/js/common/common.js"></script>
+    <script src="/js/common/helper.js"></script>
+
+    <script src="/js/app/core.js"></script>
+    <script src="/js/app/states.js"></script>
+    <script src="/js/app/options.js"></script>
+    
+    
+    <script src="/js/common/win_solver.js"></script>
+
+    <script src="/js/lang/es.js"></script>
+    <script src="/js/lang/ru.js"></script>
+
+    
+    <script src="/js/modules/storage/win_local.js"></script>
+    <script src="/js/modules/storage/library.js"></script>
+    <script src="/js/api/api.js"></script>
+
+    <script src="/js/modules/area.js"></script>
+    <script src="/js/modules/snackbar.js"></script>
+    <script src="/js/modules/win_events.js"></script>
+  
+    <script src="/js/modules/simulation/collector.js"></script>
+    <script src="/js/modules/simulation/control.js"></script>
+    <script src="/js/modules/simulation/execute.js"></script>
+    <script src="/js/modules/simulation/init.js"></script>
+    <script src="/js/modules/simulation/log.js"></script>
+    <script src="/js/win_controller.js"></script>
+    
+    <script src="/js/default.js"></script>
+</head>
+<body class="win-type-body">
+    <main>
+        <svg id="area" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="99.7%">
+            <style type="text/css">
+                /* <![CDATA[*/ 
+                     #bpm-connect a path:first-child {
+                    marker-end: url(#markEndDef);
+                    stroke: black;
+                }
+
+                #bpm-connect a path:last-child {
+                    stroke: transparent;
+                    stroke-width: 10;
+                }
+
+                #bpm-connect a.end-and path:first-child {
+                    marker-end: url(#markEndAnd);
+                }
+
+                #bpm-connect a.end-xor path:first-child {
+                    marker-end: url(#markEndXor);
+                }
+
+                #bpm-connect a.start-and path:first-child {
+                    marker-start: url(#markStartAnd);
+                }
+
+                #bpm-figures rect {
+                    stroke-width: 1;
+                }
+
+                .bw .bpm-obj {
+                    stroke: black;
+                    fill: white;
+                }
+
+                .bpm-obj text {
+                    fill: black;
+                    fill-opacity: 0.7;
+                    stroke: none;
+                    font: bold 11px Tahoma, sans-serif;
+                    text-anchor: middle;
+                    text-shadow: rgba(255, 255, 255, .6) 0 1px 0;
+                }
+
+                #bpm-connect text {
+                    fill: black;
+                    font-size: 11px;
+                }
+
+                #bpm-figures text.propval {
+                    text-anchor: start;
+                    font-weight: normal;
+                }
+
+                .bpFunction {
+                    fill: url(#grdfuncf);
+                    stroke: url(#grdfunc);
+                }
+
+                .bpEvent {
+                    fill: url(#grdeventf);
+                    stroke: url(#grdevent);
+                }
+
+                .bpExecute {
+                    fill: url(#grdexecutef);
+                    stroke: url(#grdexecute);
+                }
+
+                .bpSupport {
+                    fill: url(#grdsupportf);
+                    stroke: url(#grdsupport);
+                }
+
+                .bpProcedure {
+                    fill: url(#grdproceduref);
+                    stroke: url(#grdprocedure);
+                }
+
+                .bpInOut {
+                    fill: url(#grdinoutf);
+                    stroke: url(#grdinout);
+                }
+
+                .bpRegulate {
+                    fill: url(#grdregulatef);
+                    stroke: url(#grdregulate);
+                }
+
+                .bpComment {
+                    fill: white;
+                    stroke: gray;
+                    stroke-width: 1;
+                    stroke-dasharray: 1, 10;
+                }
+
+                    .bpComment text {
+                        text-anchor: start !important;
+                        font-weight: normal !important;
+                        color: rgba(0, 0, 0, 0.57) !important;
+                    }
+
+                .bpGenerator {
+                    fill: url(#grdgeneratorf);
+                    stroke: url(#grdgenerator);
+                }
+
+                .bpCheckPoint {
+                    fill: url(#grdcheckpointf);
+                    stroke: url(#grdcheckpoint);
+                }
+
+                .s_icon {
+                    fill: black;
+                    stroke: none;
+                    fill-opacity: 0.7;
+                }
+
+                .bw .s_icon {
+                    fill-opacity: 1;
+                }
+                    
+                    
+                 /*  ]]>*/ 
+            </style>
+            <defs>
+                <symbol id="bpslogo" viewBox="0 0 32 32">
+                    <g stroke-linejoin="round" stroke-linecap="round" style="stroke: #0D47A1; fill: #0D47A1">
+                        <path d="M8,1h16v12h-16z M12.5,2v10l8,-5zM1,19h14v12h-14zM4,21v8h3.5v-8zM8.5,21v8h3.5v-8zM17,19h14v12h-14z M20,21v8h8v-8z"></path>
+                        <path fill="none" stroke-width="2" d="M16,12v4h-8v4M16,12v4h8v4"></path>
+                    </g>
+                </symbol>
+                <symbol id="persons" viewBox="0 0 24 24">
+                    <path d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z"></path>
+                </symbol>
+                <symbol id="timelapse" viewBox="0 0 24 24">
+                    <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.24,7.76C15.07,6.58 13.53,6 12,6V12L7.76,16.24C10.1,18.58 13.9,18.58 16.24,16.24C18.59,13.9 18.59,10.1 16.24,7.76Z"></path>
+                </symbol>
+                <symbol id="probability" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M18,4.5l1.5,1.5l-14,14l-1.5,-1.5zM4,8a4,4 0 1,0 8,0a4,4 0 1,0 -8,0M7,8a1,2 0 1,0 2,0a1,2 0 1,0 -2,0M12,16a4,4 0 1,0 8,0a4,4 0 1,0 -8,0M15,16a1,2 0 1,0 2,0a1,2 0 1,0 -2,0"></path>
+                </symbol>
+                <symbol id="coin" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z"></path>
+                </symbol>
+                <symbol id="factory" viewBox="0 0 24 24">
+                    <path d="M4,18V20H8V18H4M4,14V16H14V14H4M10,18V20H14V18H10M16,14V16H20V14H16M16,18V20H20V18H16M2,22V8L7,12V8L12,12V8L17,12L18,2H21L22,12V22H2Z"></path>
+                </symbol>
+                <symbol id="checkbox-marked-outline" viewBox="0 0 24 24">
+                    <path d="M19,19H5V5H15V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V11H19M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"></path>
+                </symbol>
+                <symbol id="assignment-late" viewBox="0 0 24 24">
+                    <path d="M12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5M13,14H11V8H13M13,18H11V16H13M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"></path>
+                </symbol>
+                <symbol id="assignment-account" viewBox="0 0 24 24">
+                    <path d="M18,19H6V17.6C6,15.6 10,14.5 12,14.5C14,14.5 18,15.6 18,17.6M12,7A3,3 0 0,1 15,10A3,3 0 0,1 12,13A3,3 0 0,1 9,10A3,3 0 0,1 12,7M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"></path>
+                </symbol>
+                <symbol id="assignment-turnedin" viewBox="0 0 24 24">
+                    <path d="M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"></path>
+                </symbol>
+                <symbol id="arrow-down" viewBox="0 0 24 24">
+                    <path d="M12,18L7,13H10V9H14V13H17M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"></path>
+                </symbol>
+
+                <symbol id="fb" viewBox="0 0 24 24">
+                    <path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+                </symbol>
+                <symbol id="gp" viewBox="0 0 24 24">
+                    <path d="M19,12H17V14H16V12H14V11H16V9H17V11H19M9.07,19.2C6.27,19.2 5,17.64 5,16.18C5,15.73 5.14,14.59 6.5,13.8C7.25,13.33 8.33,13 9.62,12.89C9.43,12.64 9.28,12.34 9.28,11.9C9.28,11.75 9.3,11.59 9.34,11.44H8.95C7,11.44 5.8,9.89 5.8,8.39C5.8,6.66 7.09,4.8 9.91,4.8H14.13L13.79,5.14L13.08,5.85L13,5.91H12.3C12.71,6.33 13.2,7 13.2,8.07C13.2,9.47 12.46,10.16 11.64,10.8C11.5,10.92 11.22,11.18 11.22,11.5C11.22,11.82 11.46,12 11.61,12.14C11.74,12.25 11.9,12.36 12.08,12.5C12.89,13.05 14,13.83 14,15.36C14,17.13 12.71,19.2 9.07,19.2M20,2H4A2,2 0 0,0 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2M10.57,13.81C10.46,13.8 10.38,13.8 10.25,13.8H10.23C9.97,13.8 9.08,13.85 8.41,14.07C7.77,14.31 7,14.79 7,15.77C7,16.85 8.04,18 9.96,18C11.5,18 12.4,17 12.4,16C12.4,15.25 11.94,14.79 10.57,13.81M11.2,8.87C11.2,7.85 10.57,5.85 9.12,5.85C8.5,5.85 7.8,6.29 7.8,7.5C7.8,8.7 8.42,10.45 9.77,10.45C9.83,10.45 11.2,10.44 11.2,8.87Z"></path>
+                </symbol>
+                <symbol id="li" viewBox="0 0 24 24">
+                    <path d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z"></path>
+                </symbol>
+                <symbol id="vk" viewBox="0 0 24 24">
+                    <path d="M19.54,14.6C21.09,16.04 21.41,16.73 21.46,16.82C22.1,17.88 20.76,17.96 20.76,17.96L18.18,18C18.18,18 17.62,18.11 16.9,17.61C15.93,16.95 15,15.22 14.31,15.45C13.6,15.68 13.62,17.23 13.62,17.23C13.62,17.23 13.62,17.45 13.46,17.62C13.28,17.81 12.93,17.74 12.93,17.74H11.78C11.78,17.74 9.23,18 7,15.67C4.55,13.13 2.39,8.13 2.39,8.13C2.39,8.13 2.27,7.83 2.4,7.66C2.55,7.5 2.97,7.5 2.97,7.5H5.73C5.73,7.5 6,7.5 6.17,7.66C6.32,7.77 6.41,8 6.41,8C6.41,8 6.85,9.11 7.45,10.13C8.6,12.12 9.13,12.55 9.5,12.34C10.1,12.03 9.93,9.53 9.93,9.53C9.93,9.53 9.94,8.62 9.64,8.22C9.41,7.91 8.97,7.81 8.78,7.79C8.62,7.77 8.88,7.41 9.21,7.24C9.71,7 10.58,7 11.62,7C12.43,7 12.66,7.06 12.97,7.13C13.93,7.36 13.6,8.25 13.6,10.37C13.6,11.06 13.5,12 13.97,12.33C14.18,12.47 14.7,12.35 16,10.16C16.6,9.12 17.06,7.89 17.06,7.89C17.06,7.89 17.16,7.68 17.31,7.58C17.47,7.5 17.69,7.5 17.69,7.5H20.59C20.59,7.5 21.47,7.4 21.61,7.79C21.76,8.2 21.28,9.17 20.09,10.74C18.15,13.34 17.93,13.1 19.54,14.6Z"></path>
+                </symbol>
+                <symbol id="tw" viewBox="0 0 24 24">
+                    <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+                </symbol>
+                <pattern id="bg" patternUnits="userSpaceOnUse" width="100" height="100" stroke="#ccc" viewBox="0 0 100 100">
+                    <line x1='99.5' x2='99.5' y1='0' y2='100'></line>
+                    <line x1='0' y1='99.5' x2='100' y2='99.5'></line>
+                    <g stroke-dasharray='1,4'>
+                        <line y1='20.5' x2='100' y2='20.5'></line>
+                        <line y1='40.5' x2='100' y2='40.5'></line>
+                        <line y1='60.5' x2='100' y2='60.5'></line>
+                        <line y1='80.5' x2='100' y2='80.5'></line>
+                        <line x1='20.5' x2='20.5' y2='100'></line>
+                        <line x1='40.5' x2='40.5' y2='100'></line>
+                        <line x1='60.5' x2='60.5' y2='100'></line>
+                        <line x1='80.5' x2='80.5' y2='100'></line>
+                    </g>
+                </pattern>
+                <linearGradient id="grdfunc" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#B9F6CA"></stop>
+                    <stop offset="100%" stop-color="#388E3C"></stop>
+                </linearGradient>
+                <radialGradient id="grdfuncf" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#B9F6CA"></stop>
+                    <stop offset="100%" stop-color="#00E676"></stop>
+                </radialGradient>
+                <linearGradient id="grdevent" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FFCCBC"></stop>
+                    <stop offset="100%" stop-color="#FF5722"></stop>
+                </linearGradient>
+                <radialGradient id="grdeventf" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#FFCCBC"></stop>
+                    <stop offset="100%" stop-color="#FF8A65"></stop>
+                </radialGradient>
+                <linearGradient id="grdexecute" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FFF9C4"></stop>
+                    <stop offset="100%" stop-color="#FDD835"></stop>
+                </linearGradient>
+                <radialGradient id="grdexecutef" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#FFF9C4"></stop>
+                    <stop offset="100%" stop-color="#FFEB3B"></stop>
+                </radialGradient>
+                <linearGradient id="grdsupport" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#B3E5FC"></stop>
+                    <stop offset="100%" stop-color="#0288D1"></stop>
+                </linearGradient>
+                <radialGradient id="grdsupportf" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#B3E5FC"></stop>
+                    <stop offset="100%" stop-color="#4FC3F7"></stop>
+                </radialGradient>
+                <linearGradient id="grdprocedure" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#E0F2F1"></stop>
+                    <stop offset="100%" stop-color="#009688"></stop>
+                </linearGradient>
+                <radialGradient id="grdproceduref" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#E0F2F1"></stop>
+                    <stop offset="100%" stop-color="#64FFDA"></stop>
+                </radialGradient>
+                <linearGradient id="grdinout" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#F5F5F5"></stop>
+                    <stop offset="100%" stop-color="#9E9E9E"></stop>
+                </linearGradient>
+                <radialGradient id="grdinoutf" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#F5F5F5"></stop>
+                    <stop offset="100%" stop-color="#E0E0E0"></stop>
+                </radialGradient>
+                <linearGradient id="grdregulate" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#E1BEE7"></stop>
+                    <stop offset="100%" stop-color="#BA68C8"></stop>
+                </linearGradient>
+                <radialGradient id="grdregulatef" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#E1BEE7"></stop>
+                    <stop offset="100%" stop-color="#CE93D8"></stop>
+                </radialGradient>
+                <linearGradient id="grdgenerator" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FFE0B2"></stop>
+                    <stop offset="100%" stop-color="#F57C00"></stop>
+                </linearGradient>
+                <radialGradient id="grdgeneratorf" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#FFE0B2"></stop>
+                    <stop offset="100%" stop-color="#FFB74D"></stop>
+                </radialGradient>
+                <linearGradient id="grdcheckpoint" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FFD54F"></stop>
+                    <stop offset="100%" stop-color="#FFA000"></stop>
+                </linearGradient>
+                <radialGradient id="grdcheckpointf" cx="50%" cy="0%" r="100%">
+                    <stop offset="0%" stop-color="#FFD54F"></stop>
+                    <stop offset="100%" stop-color="#FFC107"></stop>
+                </radialGradient>
+                <marker id="markEndDef" refX="10" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+                    <path d="M0,3v4l4,-2z" fill="none" stroke="black" style="stroke-width:5"></path>
+                </marker>
+                <marker id="markEndAnd" markerWidth="10" markerHeight="20" refX="10" refY="5" orient="auto">
+                    <path d="M0,3v4l4,-2z" fill="none" stroke="black" style="stroke-width:5"></path>
+                    <line x1="1" y1="15" x2="9" y2="15" style="stroke-width:1;stroke:black;"></line>
+                    <line x1="5" y1="11" x2="5" y2="19" style="stroke-width:1;stroke:black;"></line>
+                </marker>
+                <marker id="markEndXor" markerWidth="10" markerHeight="20" refX="10" refY="5" orient="auto">
+                    <path d="M0,3v4l4,-2z" fill="none" stroke="black" style="stroke-width:5;"></path>
+                    <line x1="2" y1="12" x2="8" y2="18" style="stroke-width:1;stroke:black;"></line>
+                    <line x1="8" y1="12" x2="2" y2="18" style="stroke-width:1;stroke:black;"></line>
+                </marker>
+                <marker id="markStartAnd" markerWidth="10" markerHeight="10" refX="-2" refY="12" orient="auto">
+                    <line x1="1" y1="5" x2="10" y2="5" style="stroke-width:1;stroke:black;"></line>
+                    <line x1="5" y1="1" x2="5" y2="9" style="stroke-width:1;stroke:black;"></line>
+                </marker>
+            </defs>
+            <rect id="bpmGrid" width="100%" height="100%" fill="url(#bg)" display="none"></rect>
+            <g id="bpm-figures" transform="translate(0.5,0.5)">
+                <g id="bpm-connect" fill="none"></g>
+            </g>
+        </svg>
+        <div id="caption" contenteditable></div>
+        <div id="floatbutton"><a href="#" class="play"></a></div>
+    </main>
+    <nav id="controlpanel">
+        <ul class="cp_drag ui-helper-reset ui-helper-clearfix cp-icon-move">
+            <li><a data-text="Control" href="#control">Control</a></li>
+        </ul>
+        <section id="control">
+            <figure id="nav-model">
+                <figcaption data-text="Model">Model</figcaption>
+                <ul>
+                    <li>
+                        <a href="#" data-action="newmodel" data-title="New" title="New">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M17,13H13V17H11V13H7V11H11V7H13V11H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"></path>
+                            </svg>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="#" data-action="openmodel" data-title="Open" title="Open">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12,10L8,14H11V20H13V14H16M19,4H5C3.89,4 3,4.9 3,6V18A2,2 0 0,0 5,20H9V18H5V8H19V18H15V20H19A2,2 0 0,0 21,18V6A2,2 0 0,0 19,4Z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="savemodel" data-title="Save" title="Save">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"></path>
+                            </svg>
+                        </a>
+                    </li>  
+                    <li>
+                        <a href="#" data-action="exportmodel" data-title="Export As Image" title="Export">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                                <symbol id="exportimage">
+                                    <path d="M8.5,13.5L11,16.5L14.5,12L19,18H5M21,19V5C21,3.89 20.1,3 19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19Z"></path>
+                                </symbol>
+                                <use xlink:href="#exportimage"></use>
+                            </svg>
+                        </a>
+                    </li>                 
+                </ul>                
+            </figure>
+            <figure id="nav-design">
+                <figcaption data-text="Design">Design</figcaption>
+                <ul>
+					<li><a href="#" data-class="bpFunction" data-title="Function" title="Function"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<rect y="4" class="bpFunction" width="24" height="16" rx="2" ry="2"></rect>
+							<text x="9" y="16.5" fill-opacity=".5">F</text>
+						</svg></a></li>
+					<li><a href="#" data-class="bpGenerator" data-title="Task Generator" title="Task Generator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<polygon points="4,4 24,4 20,20 0,20" class="bpGenerator"></polygon>
+							<text x="9" y="16.5" fill-opacity=".5">G</text>							
+						</svg></a></li>
+					<li><a href="#" data-class="bpCheckPoint" data-title="Check Point" title="Check Point"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<polygon points="0,4 24,4 20,20 4,20" class="bpCheckPoint"></polygon>
+							<text x="9" y="16.5" fill-opacity=".5">C</text>							
+						</svg></a></li>					
+					<li><a href="#" data-class="bpExecute" data-title="Executer" title="Executer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<rect y="4" class="bpExecute" width="24" height="16" rx="8" ry="8"></rect>
+							<text x="9" y="16.5" fill-opacity=".5">E</text>
+						</svg></a></li>
+					<li><a href="#" data-class="bpSupport" data-title="Resource" title="Resource"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<rect y="4" class="bpSupport" width="24" height="16" rx="1" ry="1"></rect>
+							<text x="9" y="16.5" fill-opacity=".5">S</text>
+						</svg></a></li>
+					<li class="epc"><a href="#" data-class="bpEvent" data-title="Event" title="Event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">							
+							<polygon points="0,12 4,4 20,4 24,12 20,20 4,20" class="bpEvent"></polygon>
+							<text x="9" y="16.5" fill-opacity=".5">E</text>
+						</svg></a></li>
+					<li class="epc"><a href="#" data-class="bpProcedure" data-title="Procedure" title="Procedure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<rect y="7" x="3" class="bpProcedure" width="22" height="14" rx="1" ry="2"></rect>
+							<rect y="4" class="bpProcedure" width="22" height="14" rx="1" ry="2"></rect>
+							<text x="9" y="16.5" fill-opacity=".5">P</text>							
+						</svg></a></li>
+					<li class="epc"><a href="#" data-class="bpInOut" data-title="Input/Output" title="Input/Output"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<rect y="4" class="bpInOut" width="24" height="16" rx="1" ry="1"></rect>
+							<text x="3" y="16.5" fill-opacity=".5">I/O</text>
+						</svg></a></li>
+					<li class="epc"><a href="#" data-class="bpRegulate" data-title="Regulator" title="Regulator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<rect y="4" class="bpRegulate" width="24" height="16" rx="1" ry="1"></rect>
+							<text x="9" y="16.5" fill-opacity=".5">R</text>
+						</svg></a></li>					
+					<li class="epc"><a href="#" data-class="bpComment" data-title="Comment" title="Comment"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 28 28">						
+							<rect y="4" fill="white" stroke="gray" stroke-dasharray="1,3" width="24" height="16" rx="1" ry="1"></rect>
+							<text x="6" y="16.5" fill-opacity=".5">...</text>							
+						</svg></a></li>
+				</ul>
+            </figure>
+            <figure id="nav-simulate">
+                <figcaption data-text="Simulation">Simulation</figcaption>
+                <div>
+                    <div class="gm-input-group labeled">
+                        <input type="time" name="simstartSeconds" placeholder="00:00" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" required> <span class="bar"></span> <label data-text="Start">Start</label>
+                    </div>
+                    <div class="gm-input-group labeled">
+                        <input type="number" name="simdurationVal" placeholder="24" step="1" min="1" max="60" required> <select name="simdurationMult">
+                            <option value="60" data-text="min">60</option>
+                            <option value="3600" data-text="hrs">3600</option>
+                            <option value="86400" data-text="days">86400</option>
+                        </select> <span class="bar"></span> <label data-text="Duration">Duration</label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <ul>
+                        <li>
+                            <a href="#" data-action="next" data-title="Next" title="Next">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M16,18.14H18V6.14H16M6,18.14L14.5,12.14L6,6.14V18.14Z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-action="play" data-title="Run" title="Run" data-canpushed>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-action="forward" data-title="Forward" title="Forward" data-canpushed>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M13,6V18L21.5,12M4,18L12.5,12L4,6V18Z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-action="pause" data-title="Pause" title="Pause">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M14,19.14H18V5.14H14M6,19.14H10V5.14H6V19.14Z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-action="stop" data-title="Stop" title="Stop">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M18,18H6V6H18V18Z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <span id="simtime"></span>
+                    <progress id="progress" max="1"></progress>
+                </div>
+            </figure>
+            <figure id="nav-view">
+                <figcaption data-text="View">View</figcaption>
+                <ul>
+                    <li>
+                        <a href="#" data-action="showdashboard" data-title="Dashboard" title="Dashboard">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="showSettings" data-title="Settings" title="Settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="showHelp" data-title="Help" title="Help">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="showAbout" data-title="About" title="About">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="expandmenu" data-title="More" title="More">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <ol class="submenu">
+                    <li>
+                        <a href="#" data-action="showlog" data-title="Log" title="Log">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9,5V9H21V5M9,19H21V15H9M9,14H21V10H9M4,9H8V5H4M4,19H8V15H4M4,14H8V10H4V14Z"></path>
+                            </svg><span data-text="Log">Log</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="showreport" data-title="Reports" title="Reports">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5,4H18V9H17L16,6H10.06L13.65,11.13L9.54,17H16L17,15H18V20H5L10.6,12L5,4Z"></path>
+                            </svg><span data-text="Reports">Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="showlibrary" data-title="Object library" title="Object library">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z"></path>
+                            </svg><span data-text="Object library">Object library</span>
+                        </a>
+                    </li>
+                </ol>
+            </figure>
+            <footer><button id="buybtn" data-text="Buy full version"></button></footer>
+        </section>
+    </nav>
+    <div id="preloader">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    <template id="about">
+        <section data-tabname="About" data-class="bpsInfo" data-original="0">
+            <div class="papperz1">
+                <svg><use xlink:href="#bpslogo"></use></svg>
+                <h2 itemprop="name" data-text="BP Simulator">Business Process Simulator</h2>
+                <p>
+                    <span data-text="Version"></span>: <span itemprop="softwareVersion">#version#</span>
+                </p>
+                <p>
+                    <a href="mailto:support@bpsimulator.com" target="_blank">support@bpsimulator.com</a>
+                </p>
+                <p class="copyr">
+                    &copy;2015 prolis lab2k
+                </p>
+            </div>
+
+            <div class="authorized papperz1">
+                <h2 data-text="Trial expired">Trial expired</h2>               
+                    <ul>
+                        <li><span data-text="Date">Date</span>: <span class="ui-date"></span></li>
+                    </ul>              
+            </div>
+        </section>
+    </template>
+    <template id="settings">
+        <section data-tabname="Settings" data-class="bpsSettings" data-original="0">
+            <form>                
+                <div class="papperz1">
+                    <h2 data-text="Interface">Interface</h2>
+                    <fieldset id="interface">
+                        <ul>
+                            <li>
+                                <label data-text="Language">Language</label><select name="language">
+                                    <option value="ru">Русский</option>
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                </select>
+                            </li>
+                            <li><label data-text="Black & White">Black & White</label><input type="checkbox" name="objectBW"></li>
+                            <li><label data-text="Show grid">Show grid</label><input type="checkbox" name="gridShow"></li>
+                            <li><label data-text="Snap to Grid">Snap to Grid</label><input type="checkbox" name="snapToGrid"></li>
+                            <li><label data-text="Grid Size">Grid Size</label><input name="gridSize" type="number" step="1" min="10"></li>
+                            <li><label data-text="Objects Width">Objects Width</label><input name="objectWidth" type="number" step="1" min="100"></li>
+                        </ul>
+                    </fieldset>
+                </div>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="bpFunction">
+        <section data-tabname="Properties" data-class="bpFunction" data-original="0">
+            <form>
+                <h4 data-text="Main">Main</h4>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                        <li>
+                            <label data-text="Duration">Duration</label><input name="runTimeMin" type="number" step="1" min="0" required><span>-</span><input name="runTimeMax" type="number" step="1" min="0" required>&nbsp;<select name="runTimeMult">
+                                <option value="1" data-text="sec">1</option>
+                                <option value="60" data-text="min">60</option>
+                                <option value="3600" data-text="hrs">3600</option>
+                                <option value="86400" data-text="days">86400</option>
+                            </select>
+                        </li>
+                    </ul>
+                </fieldset>
+                <h4 data-text="Suppliers">Suppliers</h4>
+                <fieldset>
+                    <ul class="prevList" data-text="Local Execution Priority"></ul>
+                    <ul>
+                        <li><label data-text="Allocation rule">Allocation rule</label><input type="radio" name="execLogic" value="0">&nbsp;<span data-text="AND">AND</span><br> <input type="radio" name="execLogic" value="1" style="margin-left: 1px">&nbsp;<span data-text="XOR">XOR</span></li>
+                    </ul>
+                </fieldset>
+                <h4 data-text="Consumers">Consumers</h4>
+                <fieldset>
+                    <ul class="nextList"></ul>
+                    <ul>
+                        <li><label data-text="Allocation rule">Allocation rule</label><input type="radio" name="allocLogic" value="0">&nbsp;<span data-text="AND">AND</span><br> <input type="radio" name="allocLogic" value="1" style="margin-left: 1px">&nbsp;<span data-text="XOR">XOR</span></li>
+                    </ul>
+                </fieldset>
+                <h4 data-text="Resources">Resources</h4>
+                <fieldset>
+                    <ul class="resourceList"></ul>
+                    <ul>
+                        <li><label data-text="Joint fulfillment">Joint fulfillment</label><input type="checkbox" name="execResource"></li>
+                    </ul>
+                    <ul class="supportList"></ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="resourceItem">
+        <li>
+            <h5></h5> <label><span data-text="Cost per task">Cost per task</span> <input name="costPerTask" type="checkbox"></label> <input name="costValue" type="number" step="0.01" min="0">
+            <div class="betw"></div> <label data-text="Priority of assignment">Priority of assignment</label><input name="priority" type="number" step="1" min="0" max="100" required>
+        </li>
+    </template>
+    <template id="supportItem">
+        <li>
+            <h5></h5> <label><span data-text="Cost per task">Cost per task</span> <input name="costPerTask" type="checkbox"></label> <input name="costValue" type="number" step="0.01" min="0">
+            <div class="betw"></div>
+        </li>
+    </template>
+    <template id="bpExecute">
+        <section data-tabname="Properties" data-class="bpExecute" data-original="0">
+            <form>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                        <li><label data-text="Number of employees">Number of employees</label><input name="count" type="number" step="1" min="1" required></li>
+                        <li><label data-text="Сost per hour">Сost per hour</label><input name="costValue" type="number" step="0.01" min="0" required></li>
+                    </ul>
+                    <h5 data-text="Operating periods">Operating periods</h5>
+                    <div class="tr"></div>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="bpEvent">
+        <section data-tabname="Properties" data-class="bpEvent" data-original="0">
+            <form>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                    </ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="bpGenerator">
+        <section data-tabname="Properties" data-class="bpGenerator" data-original="0">
+            <form>
+                <h4 data-text="Main">Main</h4>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                    </ul>
+                    <h5 data-text="Dates and amount of tasks">Dates and amount of tasks</h5>
+                    <div class="tr"></div>
+                    <ul class="timeRangeList"></ul>
+                </fieldset>
+                <h4 data-text="Consumers">Consumers</h4>
+                <fieldset>
+                    <ul class="nextList"></ul>
+                    <ul>
+                        <li><label data-text="Allocation rule">Allocation rule</label><input type="radio" name="allocLogic" value="0">&nbsp;<span data-text="AND">AND</span><br> <input type="radio" name="allocLogic" value="1" style="margin-left: 1px">&nbsp;<span data-text="XOR">XOR</span></li>
+                    </ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="timerangeList">
+        <div>
+            <ul></ul>
+            <button data-text="Add period" class="icon bp-icon-check flat"></button>
+        </div>
+    </template>
+    <template id="timerangeListItem">
+        <li><span data-text="Hours from">Hours from</span> <input type="number" name="tr_from" step="1" min="0" max="24" required /> <span data-text="to">to</span> <input type="number" name="tr_to" step="1" min="0" max="24" required /><span class="bp-icon-remove" data-title="Remove"></span></li>
+    </template>
+    <template id="timerangeListItemCountable">
+        <li><span data-text="Hours from">Hours from</span> <input type="number" name="tr_from" step="1" min="0" max="24" required> <span data-text="to">to</span> <input type="number" name="tr_to" step="1" min="0" max="24" required> <span data-text="Total tasks">Total tasks</span> <input type="number" name="tr_count" step="1" min="1" required><span class="bp-icon-remove" data-title="Delete"></span></li>
+    </template>
+    <template id="bpProcedure">
+        <section data-tabname="Properties" data-class="bpProcedure" data-original="0">
+            <form>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                    </ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="bpCheckPoint">
+        <section data-tabname="Properties" data-class="bpCheckPoint" data-original="0">
+            <form>
+                <h4 data-text="Main">Main</h4>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                    </ul>
+                </fieldset>
+                <h4 data-text="Filter tasks">Filter tasks</h4>
+                <fieldset>
+                    <select name="addGenerator"></select><button data-text="Add" class="flat">Add</button>
+                    <ul class="fileteredList"></ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="fileteredListItem">
+        <li class="papperz1"><span></span><span class="bp-icon-remove" data-title="Delete"></span></li>
+    </template>
+    <template id="fileteredEmptyListItem">
+        <li class="papperz1 empty"><span data-text="All allowed">All allowed</span></li>
+    </template>
+    <template id="bpInOut">
+        <section data-tabname="Properties" data-class="bpInOut" data-original="0">
+            <form>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                    </ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="bpRegulate">
+        <section data-tabname="Properties" data-class="bpRegulate" data-original="0">
+            <form>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                    </ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="bpSupport">
+        <section data-tabname="Properties" data-class="bpSupport" data-original="0">
+            <form>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                        <li><label data-text="Сost per hour">Сost per hour</label><input name="costValue" type="number" step="0.01" min="0" required></li>
+                    </ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="bpComment">
+        <section data-tabname="Properties" data-class="bpComment" data-original="0">
+            <form>
+                <fieldset>
+                    <ul>
+                        <li><label data-text="Name">Name</label><input type="text" name="name" required></li>
+                    </ul>
+                </fieldset>
+            </form>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="customerItem">
+        <li>
+            <ul>
+                <li><label data-text="Allocation">Allocation</label><input name="allocationPercent" type="number" step="1" min="0" max="100" required>&nbsp;<span>%</span></li>
+                <li>
+                    <label data-text="Delivery time">Delivery time</label><input name="transferTimeMin" type="number" step="1" min="0" required><span>-</span><input name="transferTimeMax" type="number" step="1" min="0" required>&nbsp;<select name="delMult">
+                        <option value="1" data-text="sec">1</option>
+                        <option value="60" data-text="min">60</option>
+                        <option value="3600" data-text="hrs">3600</option>
+                        <option value="86400" data-text="days">86400</option>
+                    </select>
+                </li>
+            </ul>
+        </li>
+    </template>
+    <template id="openDialogList">
+        <section data-tabname="Stored Models" data-class="bpsOpen" data-original="0">
+            <label data-text="Private storage">Private storage</label><select name="storage" autofocus>
+                <option value="local" data-text="Local Storage">Local Storage</option>
+                
+            </select>
+            <ul></ul>
+            <footer></footer>
+        </section>
+    </template>
+    <template id="openDialogFolder">
+        <li><span class="bp-icon-remove" data-title="Delete"></span> <span class="ui-icon-rename" data-title="Rename"></span><input type="checkbox" /><label></label></li>
+    </template>
+    <template id="openDialogModel">
+        <li><span class="bp-icon-remove" data-title="Delete"></span><span class="ui-icon-rename" data-title="Rename"></span><a href="#"></a></li>
+    </template>
+    <template id="welcome">
+        <form class="welcomwin">
+            <header></header>
+            <fieldset>
+                <legend data-text="Open model"></legend>
+                <ul>
+                    <li><input type="radio" name="open" value="new" id="o0"><label for="o0" data-text="New">New</label></li>
+                    <li><input type="radio" name="open" value="demo" id="o1" checked><label for="o1" data-text="Demo">Demo</label></li>
+                    <li><input type="radio" name="open" value="last" id="o2" disabled><label for="o2" data-text="Last saved">Last saved</label></li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend data-text="Language"></legend>
+                <ul>
+                    <li>
+                        <select id="l1" name="language">
+                            <option value="ru">Русский</option>
+                            <option value="en" selected>English</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </li>
+                </ul>
+            </fieldset>
+            <footer>
+                <button class="icon cp-icon-open" data-text="Open" autofocus>Open</button>
+            </footer>
+        </form>
+    </template>
+    
+    <template id="help">
+        <section data-tabname="Help" data-class="bpsHelp" data-original="0" class="bpsHelp">
+            <h3 data-text="Brief Reference">Brief Reference</h3>
+            <p>
+                <span data-text="Add element">Add element</span>: <span data-text="Click or drag the icon element in the Design Control panel section.">Click or drag the icon element in the Design Control panel section.</span>
+            </p>
+            <p>
+                <span data-text="Edit element">Edit element</span>: <span data-text="Double-click on the element.">Double-click on the element.</span> <span data-text="The name of the element can be changed directly on the model, the other properties are available on the Details tab at the Control Panel.">The name of the element can be changed directly on the model, the other properties are available on the Details tab at the Control Panel.</span>
+            </p>
+            <p>
+                <span data-text="Move element">Move element</span>: <span data-text="Drag an element to the relevant position on the model.">Drag an element to the relevant position on the model.</span>
+            </p>
+            <p>
+                <span data-text="Delete element">Delete element</span>: <span data-text="Double-click on the element.">Double-click on the element.</span> <span data-text="Click the Delete button on the Details tab at the Control Panel.">Click the Delete button on the Details tab at the Control Panel.</span>
+            </p>
+            <p>
+                <span data-text="Link elements">Link elements</span>: <span data-text="Double-click on the element.">Double-click on the element.</span> <span data-text="Elements that can not be a receiver of connection will be semi-transparent.">Elements that can not be a receiver of connection will be semi-transparent.</span> <span data-text="By clicking on other elements a link will be created from the active element to it.">By clicking on other elements a link will be created from the active element to it.</span>
+            </p>
+            <p>
+                <span data-text="Unlink elements">Unlink elements</span>: <span data-text="Double-click on the element.">Double-click on the element.</span> <span data-text="All links of the active element will be semi-transparent.">All links of the active element will be semi-transparent.</span> <span data-text="Click on the link for removal.">Click on the link for removal.</span>
+            </p>
+            <p>
+                <span data-text="Deactivate element">Deactivate element</span>: <span data-text="Click anywhere on the model.">Click anywhere on the model.</span>
+            </p>
+            <h3 data-text="Notation">Notation</h3>
+            <div class="clearfix">
+                <div style="float:left;margin-right:8em;">
+                    <ul>
+                        <li>
+                            <svg width="18" height="16">
+                                <path d="M14,0v16" stroke="black" marker-end="url(#markEndAnd)"></path>
+                            </svg> <span data-text="Allocation rule">Allocation rule</span> &laquo;<span data-text="AND">AND</span>&raquo;
+                        </li>
+                        <li>
+                            <svg width="18" height="16">
+                                <path d="M14,0v16" stroke="black" marker-end="url(#markEndXor)"></path>
+                            </svg> <span data-text="Allocation rule">Allocation rule</span> &laquo;<span data-text="XOR">XOR</span>&raquo;
+                        </li>
+                        <li>
+                            <svg width="16" height="16">
+                                <use xlink:href="#persons" width="16" height="16"></use>
+                            </svg> <span data-text="Utilisation ratio"></span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16">
+                                <use xlink:href="#timelapse" width="16" height="16"></use>
+                            </svg> <span data-text="The average time from the start"></span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16">
+                                <use xlink:href="#factory" width="16" height="16"></use>
+                            </svg> <span data-text="Total Costs"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <svg width="16" height="16">
+                                <use xlink:href="#arrow-down" width="16" height="16"></use>
+                            </svg> <span data-text="Tasks in the delivery"></span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16">
+                                <use xlink:href="#assignment-late" width="16" height="16"></use>
+                            </svg> <span data-text="In the processing queue"></span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16">
+                                <use xlink:href="#assignment-account" width="16" height="16"></use>
+                            </svg> <span data-text="Tasks in the work"></span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16">
+                                <use xlink:href="#assignment-turnedin" width="16" height="16"></use>
+                            </svg> <span data-text="Tasks executed"></span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="helpbot2">
+                <a href="https://www.bpsimulator.com/en/help/?utm_source=app&utm_medium=win" data-text="Reference Guide" target="_blank" id="click_guide">Reference Guide</a>
+            </div>
+        </section>
+    </template>
+    <template id="backgroundGrid">
+        <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'>
+            <g stroke='#ccc'>
+                <line x1='99.5%' x2='99.5%' y1='0' y2='100%'></line>
+                <line x1='0' y1='99.5%' x2='100%' y2='99.5%'></line>
+                <g stroke-dasharray='1,4'>
+                    <line y1='20.5%' x2='100%' y2='20.5%'></line>
+                    <line y1='40.5%' x2='100%' y2='40.5%'></line>
+                    <line y1='60.5%' x2='100%' y2='60.5%'></line>
+                    <line y1='80.5%' x2='100%' y2='80.5%'></line>
+                    <line x1='20.5%' x2='20.5%' y2='100%'></line>
+                    <line x1='40.5%' x2='40.5%' y2='100%'></line>
+                    <line x1='60.5%' x2='60.5%' y2='100%'></line>
+                    <line x1='80.5%' x2='80.5%' y2='100%'></line>
+                </g>
+            </g>
+        </svg>
+    </template>
+    <template id="dashboard">
+        <section data-tabname="Dashboard" data-class="bpsDashboard" data-original="0" class="bpsDashboard">
+            <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" id="svgdashboard" width='800' height='500' font-family="Tahoma,sans-serif">
+                <defs>
+                    <linearGradient id="ggrad">
+                        <stop offset="10%" stop-color="#e74c3c"></stop>
+                        <stop offset="50%" stop-color="#FF6"></stop>
+                        <stop offset="90%" stop-color="#2ecc71"></stop>
+                    </linearGradient>
+                    <filter id="f3" x="0" y="0" width="200%" height="200%">
+                        <feOffset result="offOut" in="SourceAlpha" dx="1" dy="1"></feOffset>
+                        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1"></feGaussianBlur>
+                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+                    </filter>
+                </defs>
+                <symbol id="gauge" viewBox="0 0 150 150">
+                    <path d="M25,124A70,70 0 1 1 124,124L113,113A55,55 1 1 0 36,113z" fill="url(#ggrad)"></path>
+                    <text text-anchor="middle" font-size="12" fill="#333">
+                        <tspan x="46" y="103">0</tspan>
+                        <tspan x="35" y="68">20</tspan>
+                        <tspan x="56" y="39">40</tspan>
+                        <tspan x="93" y="39">60</tspan>
+                        <tspan x="114" y="68">80</tspan>
+                        <tspan x="103" y="103">100</tspan>
+                    </text>
+                    <g>
+                        <text font-size="20" fill="#333" text-anchor="middle" x="75" y="125">0%</text>
+                        <path d="M36,113L64,64A15,15 0 1 1 85,85z" fill="white" stroke="#999" transform="rotate(0,75,75)" filter="url(#f3)"></path>
+                    </g>
+
+                </symbol>
+                <symbol id="qlen" preserveAspectRatio="none" viewBox="0 0 1440 100">
+                    <path stroke="#e74c3c" d=""></path>
+                </symbol>
+                <symbol id="activity" preserveAspectRatio="none" viewBox="0 0 1440 100">
+                    <path fill="#3498db" d=""></path>
+                    <path fill="#2ecc71" d=""></path>
+                </symbol>
+                <symbol id="time24">
+                    <path d="M0,20v100h240M0,70.5h240M20,118v4M40,118v4M60,118v4M80,118v4M100,118v4M120,118v4M140,118v4M160,118v4M180,118v4M200,118v4M220,118v4" fill="none" stroke="#333" stroke-width="0.5"></path>
+                    <text y="132" text-anchor="middle" font-size="10" fill="#333">
+                        <tspan x="20">2</tspan>
+                        <tspan x="40">4</tspan>
+                        <tspan x="60">6</tspan>
+                        <tspan x="80">8</tspan>
+                        <tspan x="100">10</tspan>
+                        <tspan x="120">12</tspan>
+                        <tspan x="140">14</tspan>
+                        <tspan x="160">16</tspan>
+                        <tspan x="180">18</tspan>
+                        <tspan x="200">20</tspan>
+                        <tspan x="220">22</tspan>
+                    </text>
+                </symbol>
+                <symbol id="lefttop" viewBox="0 0 240 140">
+                    <rect x="5" y="4" width="12" height="12" fill="#3498db"></rect>
+                    <text x="20" y="15" font-size="12" data-text="Created">Created</text>
+                    <rect x="120" y="4" width="12" height="12" fill="#2ecc71"></rect>
+                    <text x="135" y="15" font-size="12" data-text="Completed">Completed</text>
+                    <use xlink:href="#activity" x="2" y="20" height="100" width="240"></use>
+                    <use xlink:href="#time24" x="2"></use>
+                    <g font-size="10">
+                        <rect x="4" y="59" width="18" height="10" fill="rgba(255,255,255,0.5)"></rect>
+                        <rect x="4" y="19" width="18" height="10" fill="rgba(255,255,255,0.5)"></rect>
+                        <text x="4" y="68"></text>
+                        <text x="4" y="28"></text>
+                    </g>
+                </symbol>
+                <symbol id="leftbottom" viewBox="0 0 240 140">
+                    <rect x="5" y="4" width="12" height="12" fill="#e74c3c"></rect>
+                    <text x="20" y="15" font-size="12" fill="#000" data-text="Queue Length">Queue Length</text>
+                    <use xlink:href="#qlen" y="20" x="2" height="100" width="240"></use>
+                    <g font-size="10">
+                        <rect x="4" y="59" width="18" height="10" fill="rgba(255,255,255,0.5)"></rect>
+                        <rect x="4" y="19" width="18" height="10" fill="rgba(255,255,255,0.5)"></rect>
+                        <text x="4" y="68"></text>
+                        <text x="4" y="28"></text>
+                    </g>
+                    <use xlink:href="#time24" x="2"></use>
+                </symbol>
+                <symbol id="righttop" viewBox="0 0 250 180">
+                    <text x="125" y="15" text-anchor="middle" font-size="12" data-text="Throughput Time">Throughput Time</text>
+                    <g class="legend">
+                        <rect y="38" x="142" width="12" height="12" fill="#2ecc71"></rect>
+                        <rect y="68" x="142" width="12" height="12" fill="#3498db"></rect>
+                        <rect y="98" x="142" width="12" height="12" fill="#e74c3c"></rect>
+                        <text font-size="10" fill="#333">
+                            <tspan x="157" y="48" data-text="Processing">Processing</tspan>
+                            <tspan x="270" text-anchor="end"></tspan>
+                            <tspan x="157" y="78" data-text="Transportation">Transportation</tspan>
+                            <tspan x="270" text-anchor="end"></tspan>
+                            <tspan x="157" y="108" data-text="Queue time">Queue time</tspan>
+                            <tspan x="267" text-anchor="end"></tspan>
+                        </text>
+                    </g>
+                    <g transform="rotate(-15,70,65)">
+                        <path d="M10,65a60,40 0 0 1 120,0v15a60,40 0 0 1 -120,0z" fill="#e74c3c"></path>
+                        <path d="M10,65a60,40 0 0 1 120,0v15a60,40 0 0 1 -120,0z" fill="#3498db"></path>
+                        <path d="M10,65a60,40 0 0 1 120,0v15a60,40 0 0 1 -120,0z" fill="#2ecc71"></path>
+                        <path d="M10,65a60,40 1 0 0 120,0v15a60,40 0 0 1 -120,0z" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)"></path>
+                    </g>
+                    <g class="perc">
+                        <text fill="white" text-anchor="middle" font-size="12">
+                            <tspan></tspan>
+                            <tspan></tspan>
+                            <tspan></tspan>
+                        </text>
+                    </g>
+                </symbol>
+                <symbol id="rightbot" viewBox="0 0 200 140">
+                    <text font-size="12" x="100" y="15" text-anchor="middle" data-text="Summary">Summary</text>
+                    <text font-size="10" fill="#333">
+                        <tspan x="0" y="40" data-text="Tasks created">Tasks created</tspan>
+                        <tspan x="180" text-anchor="end">0</tspan>
+                        <tspan x="0" y="60" data-text="Tasks completed">Tasks completed</tspan>
+                        <tspan x="180" text-anchor="end">0</tspan>
+                        <tspan x="0" y="80" data-text="Total Costs">Total Costs</tspan>
+                        <tspan x="180" text-anchor="end">0</tspan>
+                        <tspan x="0" y="100" data-text="Takt time">Takt time</tspan>
+                        <tspan x="180" text-anchor="end">00:00:00</tspan>
+                        <tspan x="0" y="120" data-text="Cycle time">Cycle time</tspan>
+                        <tspan x="177" text-anchor="end">00:00:00</tspan>
+                    </text>
+                </symbol>
+                <use xlink:href="#lefttop" y="2%" width="42%" height="40%"></use>
+                <use xlink:href="#leftbottom" y="55%" width="42%" height="40%"></use>
+                <use xlink:href="#righttop" x="50%" y="2%" width="50%" height="50%"></use>
+                <use xlink:href="#rightbot" x="60%" y="55%" width="42%" height="40%"></use>
+                <use xlink:href="#gauge" x="35%" y="35%" width="30%" height="30%"></use>
+                <text text-anchor="middle" y="320" x="50%" font-size="18" data-text="Performance">Performance</text>
+                
+            </svg>
+            <a href="#" data-title="Export As Image" class="fbut">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                    <use xlink:href="#exportimage"></use>
+                </svg>
+            </a>
+        </section>
+    </template>
+    <template id="log">
+        <section data-tabname="Log" data-class="bpsLog" data-original="0" class="bpsLog">
+            <ul></ul>
+        </section>
+    </template>
+    <template id="library">
+        <section data-tabname="Object library" data-class="bpsLibrary" data-original="0" class="bpslibrary">
+            <header>
+                <a href="#" data-text="Executer" data-class="bpExecute" class="">Executer</a> <a href="#" data-text="Resource" data-class="bpSupport" class="">Resource</a> <a href="#" data-text="Regulator" data-class="bpRegulate" class="">Regulator</a> <a href="#" data-text="Input/Output" data-class="bpInOut" class="">Input/Output</a>
+            </header>
+            <ul></ul>
+            <footer>
+                <a href="#" data-text="Library" class="imglink iconfilefind">Library</a>
+                <a href="#" data-text="Update Model" class="imglink iconpackagedown">Update Model</a>
+                <a href="#" data-text="Update Library" class="imglink iconpackageup">Update Library</a>
+            </footer>
+        </section>
+    </template>
+    <template id="report">
+        <section data-tabname="Reports" data-class="bpsReport" data-original="0" class="bpsReport">
+            <header>
+                <a href="#" data-text="Utilisation ratio" data-func="utilisation">Utilisation ratio</a>
+                <a href="#" data-text="Responsibility matrix" data-func="matrix">Responsibility Matrix</a>
+            </header>
+            <table data-func="utilisation">
+                <thead>
+                    <tr>
+                        <th data-text="Resource">Resource</th>
+                        <th data-text="Employment time">Employment time</th>
+                        <th data-text="Employment cost">Employment cost</th>
+                        <th data-text="Utilisation ratio">Utilisation ratio</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <table data-func="matrix"><thead></thead><tbody></tbody></table>
+        </section>
+    </template>    
+</body>
+</html>

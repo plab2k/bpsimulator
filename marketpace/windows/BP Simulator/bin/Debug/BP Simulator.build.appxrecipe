@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>LAB2K</Machine>
+    <WindowsUser>1</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>77987233-cce2-4a9c-833f-e21d28300546</PackageIdentityName>
+    <IntermediateOutputPath>D:\projects\simulator\dev\marketpace\windows\BP Simulator\bld\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\bpctrlpanel.css">
+      <PackagePath>css\bpctrlpanel.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\bpdialog.css">
+      <PackagePath>css\bpdialog.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\bpmodeler.css">
+      <PackagePath>css\bpmodeler.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\common.css">
+      <PackagePath>css\common.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\header.css">
+      <PackagePath>css\header.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\css\vendor\normalize.css">
+      <PackagePath>css\vendor\normalize.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\css\ui-dark.css">
+      <PackagePath>WinJS\css\ui-dark.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\css\ui-light.css">
+      <PackagePath>WinJS\css\ui-light.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\demos\1.json">
+      <PackagePath>demos\1.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\api\api.js">
+      <PackagePath>js\api\api.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\app\core.js">
+      <PackagePath>js\app\core.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\app\options.js">
+      <PackagePath>js\app\options.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\app\states.js">
+      <PackagePath>js\app\states.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\common\common.js">
+      <PackagePath>js\common\common.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\common\dbltap.js">
+      <PackagePath>js\common\dbltap.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\common\helper.js">
+      <PackagePath>js\common\helper.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\lang\es.js">
+      <PackagePath>js\lang\es.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\lang\ru.js">
+      <PackagePath>js\lang\ru.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\area.js">
+      <PackagePath>js\modules\area.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\autosave.js">
+      <PackagePath>js\modules\autosave.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\calc.js">
+      <PackagePath>js\modules\calc.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\dblclick.js">
+      <PackagePath>js\modules\dblclick.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\errors.js">
+      <PackagePath>js\modules\errors.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\collector.js">
+      <PackagePath>js\modules\simulation\collector.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\control.js">
+      <PackagePath>js\modules\simulation\control.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\execute.js">
+      <PackagePath>js\modules\simulation\execute.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\init.js">
+      <PackagePath>js\modules\simulation\init.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\simulation\log.js">
+      <PackagePath>js\modules\simulation\log.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\modules\snackbar.js">
+      <PackagePath>js\modules\snackbar.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\globalize.culture.es.js">
+      <PackagePath>js\vendor\globalize.culture.es.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\globalize.culture.ru.js">
+      <PackagePath>js\vendor\globalize.culture.ru.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\globalize.js">
+      <PackagePath>js\vendor\globalize.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\jquery-2.1.4.js">
+      <PackagePath>js\vendor\jquery-2.1.4.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\vendor\jquery-ui-1.11.4.js">
+      <PackagePath>js\vendor\jquery-ui-1.11.4.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\ctrlpanel.js">
+      <PackagePath>js\widget\ctrlpanel.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\dashboard.js">
+      <PackagePath>js\widget\dashboard.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\dialogs.js">
+      <PackagePath>js\widget\dialogs.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\floatbtn.js">
+      <PackagePath>js\widget\floatbtn.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\modeler.js">
+      <PackagePath>js\widget\modeler.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\objdetail.js">
+      <PackagePath>js\widget\objdetail.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\js\widget\timeranges.js">
+      <PackagePath>js\widget\timeranges.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js-buildinfo\debug.js">
+      <PackagePath>js-buildinfo\debug.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js-buildinfo\release.js">
+      <PackagePath>js-buildinfo\release.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\buildinfo.js">
+      <PackagePath>js\buildinfo.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\common\win_solver.js">
+      <PackagePath>js\common\win_solver.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\modules\storage\win_local.js">
+      <PackagePath>js\modules\storage\win_local.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\win_controller.js">
+      <PackagePath>js\win_controller.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\js\modules\win_events.js">
+      <PackagePath>js\modules\win_events.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\js\en-US\ui.strings.js">
+      <PackagePath>WinJS\js\en-US\ui.strings.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\js\base.js">
+      <PackagePath>WinJS\js\base.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\js\ui.js">
+      <PackagePath>WinJS\js\ui.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\default.html">
+      <PackagePath>default.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Icon.256.png">
+      <PackagePath>images\Icon.256.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\LockScreenLogo.scale-200.png">
+      <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\SplashScreen.scale-200.png">
+      <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Square150x150Logo.scale-200.png">
+      <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Square44x44Logo.scale-200.png">
+      <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\StoreLogo.scale-100.png">
+      <PackagePath>images\StoreLogo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\images\Wide310x150Logo.scale-200.png">
+      <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\WinJS\fonts\Symbols.ttf">
+      <PackagePath>WinJS\fonts\Symbols.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\projects\simulator\dev\marketpace\windows\BP Simulator\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

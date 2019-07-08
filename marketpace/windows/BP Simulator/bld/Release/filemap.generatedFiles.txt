@@ -1,0 +1,4 @@
+bld\Release\filemap.pri
+bld\Release\filemap.map.txt
+bld\Release\filemap.scale-100.pri
+bld\Release\filemap.scale-100.map.txt
