@@ -1,3 +1,7 @@
+.vscode
+img
+tmp
+util
 # Logs
 logs
 *.log
