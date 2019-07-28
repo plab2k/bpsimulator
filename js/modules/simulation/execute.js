@@ -213,36 +213,66 @@ app.simulation.execute = (function () {
     }
 
     function assignTasksToResources() {
-        let tasks = {}, executers = {}, opTime = 0;
-        //Step 1 - make the global tasks pool
+        const filterByTime = (task) => { return task.last < runTime };
+        const sortByTime=(a,b)=>{return a.last - b.last}
+        const isBatch = (item) => {
+            const obj = item.func, time = item.task.last;
+            return obj._simulation.stockQueue.filter(task => { return task.last <= time })
+                .length >= obj.batchFill == true ? obj.batchSize : 1
+        }
+        const getBatch(func){
+            let batch=func._simulation.stockQueue.filter(filterByTime).sort(sortByTime).slice(0,func.batchSize);
+            batch=(func.batchFill == true && batch.length==func.batchSize)?batch:[]; 
+            return batch
+        }
+        const assignBatch(func,batch){
+            return true
+        }
+        let resources=[];
+        //Step 1 - form funcs list
         Object.values(app.model.objects)
             .filter(obj =>
                 obj.objClass == app.options.types.objClass.bpFunction
-                && obj.execute.objects.length > 0
-                && obj._simulation.stockQueue.length > 0)
+                    && obj.execute.objects.length > 0
+                    && obj._simulation.stockQueue.filter(filterByTime).length > (obj.batchFill == true) ? obj.batchSize - 1 : 0
+                    && obj.execute.length>0)
             .forEach(obj => {
-                let arr = obj._simulation.stockQueue
-                    .filter(task => task.last < runTime)
-                    .sort((a, b) => { return a.last - b.last });
-                tasks[obj.id] = arr;
-                opTime = opTime ? Math.min(arr[0].last, opTime) : arr[0].last;
-                obj.execute.objects.forEach(res => {
-                    let parr = [{
-                        obj: obj.id,
-                        priority: res.priority
-                    }];
-                    executers[res.obj] = executers[res.obj] ? executers[res.obj].push(parr) : [parr];
-                })
+                obj.execute.objects.forEach(resource=>{
+                    const resId=resource.obj;
+                    const res=app.model.objects[resId];
+                    res._simulation.resources
+                    .filter(time=>time<=runTime)
+                    .forEach(time=>{
+                        resources.push({
+                            func:obj.id,
+                            priority:resource.priority,
+                            res:resId,
+                            time:time
+                        })
+                    })
+                });
 
             });
-        //Step 2 Sort by time
-        //tasks.sort((a, b) => { return a.task.last - b.task.last });
-        //const opTime = tasks[0].task.last;
-        //Step 3 group by function
-        //tasks.forEach(elem => { })
+        //Step 2 sort res
+        resources.sort((a,b)=>{return a.time-b.time});
+        if (resources.length>0){
+            let itemIndex=0;
+            const resItem=resources[itemIndex];
+            let func=app.model.objects[resItem.func];
+            let batch=getBatch(func);
+            const assignResult=assignBatch(func,batch);
+            if (!assignResult.length){                
+                resources=resources.filter(item=>{return item.func!=resItem.func});                
+            }
 
-        console.log(tasks)
 
+
+
+        }
+
+
+
+console.log(resources)
 
     }
     function processTaskinFunction(obj) {
