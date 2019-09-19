@@ -14,7 +14,7 @@ const cfg = {
 var script_name = "bpsim-" + cfg.version.app + ".js";
 var metrika = fs.readFileSync("./ant/metrika.app.html", "utf8");
 var analytics = fs.readFileSync("./ant/analytics.app.html", "utf8");
-var serviceworker = fs.readFileSync("./ant/serviceworker.app.js", "utf8");
+
 const scriptlist = [
   "https://ajax.googleapis.com/ajax/libs/jquery/" +
     cfg.version.jq +
